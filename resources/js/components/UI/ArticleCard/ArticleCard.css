@@ -1,0 +1,8 @@
+.ArticleCard img {
+    opacity: .8;
+    transition: all .5s;
+}
+
+.ArticleCard .card:hover img {
+    opacity: 1;
+}

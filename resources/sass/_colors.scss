@@ -1,0 +1,115 @@
+// My colors
+$myblue: #005eb1;
+$mylightblue: #62bafe;
+$mydarkblue: #002f59;
+$mypink: #cd105c;
+$scarlet: #8d004b;
+$myred: #ff0b33;
+$purered: #f60929;
+$myorange: #f7941d;
+$myoranger: #f67e09;
+$brown: #7b3f05;
+$myyellow: #ffcd28;
+$darkyellow: darken($myyellow, 10%);
+$mygreen: #17a5aa;
+$mylemongreen: #f6ff01;
+$darkgreen: #060F2A;
+$white: #ffffff;
+$gray: #aaa;
+$black: #000000;
+
+// Colors
+$colors: "green" $mygreen $white, "lemongreen" $mylemongreen $dark, "darkblue" $darkgreen $white,
+  "yellow" $myyellow $black, "darkyellow" $darkyellow $white, "red" $myred $white, "purered" $purered $white,
+  "orange" $myorange $white, "oranger" $myoranger $white, "scarlet" $scarlet $white, "blue" $myblue $white,
+  "lightblue" $mylightblue $white, "pink" $mypink $white, "mydarkblue" $mydarkblue $white, "white" $white $black,
+  "black" $black $white, "gray" $gray $white;
+@each $name, $color, $font in $colors {
+  .text-#{$name} {
+    color: $color !important;
+  }
+
+  .text-#{$name}-10 {
+    color: rgba($color, 0.1);
+  }
+
+  .text-#{$name}-20 {
+    color: rgba($color, 0.2);
+  }
+
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+
+  .bg-#{$name}-10 {
+    background-color: rgba($color, 0.1) !important;
+  }
+
+  .bg-#{$name}-20 {
+    background-color: rgba($color, 0.2) !important;
+  }
+
+  .bg-#{$name}-33 {
+    background-color: rgba($color, 0.33) !important;
+  }
+
+  .bg-#{$name}-50 {
+    background-color: rgba($color, 0.5) !important;
+  }
+
+  .bg-#{$name}-80 {
+    background-color: rgba($color, 0.8) !important;
+  }
+
+  .btn-#{$name} {
+    background-color: $color;
+    color: $font !important;
+
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: darken($color, 5%);
+    }
+
+    &.disabled {
+      background-color: rgba($color, 0.5);
+    }
+  }
+
+  .border-#{$name}-20 {
+    border-color: rgba($color, 0.2) !important;
+  }
+
+  .border-#{$name}-50 {
+    border-color: rgba($color, 0.5) !important;
+  }
+
+  .border-#{$name} {
+    border-color: $color !important;
+  }
+}
+
+$gradients: "scarlet" $scarlet $myred 259deg, "orange" $myoranger $brown 253deg, "blue" $myblue $mydarkblue 210deg, "dark" $black $dark 39deg;
+@each $name, $primary, $secondary, $angle in $gradients {
+  .bg-#{$name}-gradient {
+    background-image: linear-gradient($angle, $primary 0%, $secondary 100%) !important;
+  }
+}
+
+$radial-gradients: "green" $mygreen $darkgreen, "scarlet" $scarlet $myred;
+@each $name, $primary, $secondary in $radial-gradients {
+  .bg-#{$name}-radial-gradient {
+    background: transparent
+      radial-gradient(closest-side at 50% 50%, $primary 0%, $secondary 100%)
+      0%
+      0%
+      no-repeat
+      padding-box;
+  }
+}
+
+.bg-text {
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+}

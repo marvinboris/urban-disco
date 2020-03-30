@@ -1,0 +1,21 @@
+body {
+  font-weight: 400;
+}
+
+.badge-block {
+  display: block !important;
+  width: 80%;
+  transform: translateX(10%);
+  border-radius: 2px !important;
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  text-align: center !important;
+}
+
+.full-height-user {
+  min-height: calc(100vh - 75.8px);
+}
+
+.full-height-app {
+  min-height: calc(100vh - 132px);
+}
