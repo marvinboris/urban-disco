@@ -9,11 +9,15 @@ import '../../public/css/app.css';
 import Application from './Application';
 import * as serviceWorker from './serviceWorker';
 import authReducer from './store/reducers/auth';
+import frontendReducer from './store/reducers/frontend';
+
+export const rootPath = '/api/';
 
 const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
 
 const rootReducer = combineReducers({
     auth: authReducer,
+    frontend: frontendReducer,
 });
 
 const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
