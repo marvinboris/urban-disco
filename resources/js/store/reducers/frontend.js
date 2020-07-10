@@ -42,7 +42,7 @@ const fFooterStart = (state, action) => updateObject(state, { footer: updateObje
 const fFooterSuccess = (state, action) => updateObject(state, { footer: updateObject(state.footer, { loading: false, error: null, ...action }) });
 const fFooterFail = (state, action) => updateObject(state, { footer: updateObject(state.footer, { loading: false, ...action }) });
 
-export default (state, action) => {
+export default (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.F_PRODUCTS_RESET: return fProductsReset(state, action);
         case actionTypes.F_PRODUCTS_START: return fProductsStart(state, action);

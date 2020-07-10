@@ -58,7 +58,7 @@ const changePasswordSuccess = (state, action) => updateObject(state, {
 });
 const changePasswordFail = (state, action) => updateObject(state, { error: action.payload, loading: false });
 
-const reducer = (state = initialState, action) => {
+export default (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.AUTH_RESET: return authReset(state, action);
         case actionTypes.AUTH_ERROR_RESET: return authErrorreset(state, action);
@@ -95,5 +95,3 @@ const reducer = (state = initialState, action) => {
         default: return state;
     }
 };
-
-export default reducer;
