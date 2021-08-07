@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Container, Col, Row } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookSquare, faInstagramSquare, faLinkedin, faWhatsappSquare, faYoutubeSquare } from '@fortawesome/free-brands-svg-icons';
 
 import FooterBlock from './FooterBlock/FooterBlock';
 import Logo from '../UI/Logo/Logo';
@@ -22,8 +23,8 @@ const footer = () => (
                             <Logo big />
                             <FooterBlock title="Address" className="mt-4">
                                 <p className="text-300">
-                                    Douala - Cameroun<br />Akwa, Mobile Bonakouamoung <br />Sis en face Beneficial Life
-                        </p>
+                                    Douala - Cameroun<br />Akwa, Camp Yassa
+                                </p>
                             </FooterBlock>
                         </Col>
                         <Col lg={4}>
@@ -33,11 +34,11 @@ const footer = () => (
                                         <dl>
                                             <FontAwesomeIcon icon="phone-square" className="text-white mr-2" />
                                             <strong>Online</strong>:
-                                </dl>
+                                        </dl>
                                         <div />
                                         <dl className="flex-grow-1 pl-sm-4 text-300">
-                                            <div><a href="tel:(+237) 123 345 545" className="text-white text-decoration-none">(+237) 123 345 545</a></div>
-                                            <div><a href="tel:(+237) 123 345 545" className="text-white text-decoration-none">(+237) 123 345 545</a></div>
+                                            <div><a href="tel:(+237) 656 395 217" className="text-white text-decoration-none">(+237) 656 395 217</a></div>
+                                            <div><a href="tel:(+33) 769 570 133" className="text-white text-decoration-none">(+33) 769 570 133</a></div>
                                         </dl>
                                     </div>
 
@@ -45,11 +46,10 @@ const footer = () => (
                                         <dl>
                                             <FontAwesomeIcon icon="envelope" className="text-white mr-2" />
                                             <strong>Email</strong>:
-                                </dl>
+                                        </dl>
                                         <div />
                                         <dl className="flex-grow-1 pl-sm-4 text-300">
                                             <div><a href="mailto:contact@themasterofarts.com" className="text-white text-decoration-none">contact@themasterofarts.com</a></div>
-                                            <div><a href="mailto:themasterofarts64@gmail.com" className="text-white text-decoration-none">themasterofarts64@gmail.com</a></div>
                                         </dl>
                                     </div>
                                 </dl>
@@ -96,16 +96,15 @@ const footer = () => (
                 <footer className="text-light pb-4">
                     <div className="border-top border-white-20 d-flex justify-content-between align-items-center pt-4">
                         <div>
-                            © Copyrights 2020 <span className="text-white text-700">The Master of Arts 64</span>. All rights reserved.
+                            © Copyrights 2020 <span className="text-white text-700">Master ART 64</span>. All rights reserved.
                         </div>
 
                         <div className="d-flex">
-                            <FontAwesomeIcon size="2x" icon={["fab", "facebook-square"]} className="mr-3" />
-                            <FontAwesomeIcon size="2x" icon={["fab", "twitter-square"]} className="mr-3" />
-                            <FontAwesomeIcon size="2x" icon={["fab", "linkedin"]} className="mr-3" />
-                            <FontAwesomeIcon size="2x" icon={["fab", "instagram"]} className="mr-3" />
-                            <FontAwesomeIcon size="2x" icon={["fab", "skype"]} className="mr-3" />
-                            <FontAwesomeIcon size="2x" icon={["fab", "youtube"]} />
+                            <a href="https://www.facebook.com/Themasterofarts" className="mr-3"><FontAwesomeIcon className="text-facebook" size="2x" icon={faFacebookSquare} /></a>
+                            <a href="https://www.linkedin.com/company/ma64" className="mr-3"><FontAwesomeIcon className="text-linkedin" size="2x" icon={faLinkedin} /></a>
+                            <a href="https://www.youtube.com/channel/UCcS0kG75hsf3Rt0-sYyG-0A/" className="mr-3"><FontAwesomeIcon className="text-youtube" size="2x" icon={faYoutubeSquare} /></a>
+                            <a href="https://www.instagram.com/masterart_64/" className="mr-3"><FontAwesomeIcon className="text-black" size="2x" icon={faInstagramSquare} /></a>
+                            <a href="https://api.whatsapp.com/send?phone=+237%20656395217"><FontAwesomeIcon className="text-whatsapp" size="2x" icon={faWhatsappSquare} /></a>
                         </div>
                     </div>
                 </footer>

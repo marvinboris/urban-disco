@@ -17,13 +17,13 @@ import Spinner from "../../components/UI/Spinner/Spinner";
 import * as actions from "../../store/actions";
 
 import Drone from "../../../../public/images/Drone.png";
-import FotoTop from "../../../../public/images/foto_top.png";
-import FotoBottom from "../../../../public/images/foto_bottom.png";
+import FotoTop from "../../../../public/images/photo_2021-08-07_21-08-43.jpg";
+import FotoBottom from "../../../../public/images/photo_2021-08-07_21-06-47.jpg";
 
 // Products Images
-import DroneBlh9180 from "../../../../public/images/blh9180-11.png";
-import HubsanH501S from "../../../../public/images/Hubsan-H501S-X4-21.png";
-import CheersonCX10c from "../../../../public/images/pf726003ba-6.png";
+import DroneBlh9180 from "../../../../public/images/photo_2021-08-07_20-22-16.jpg";
+import HubsanH501S from "../../../../public/images/photo_2021-08-07_20-23-17.jpg";
+import CheersonCX10c from "../../../../public/images/image_2021-08-07_21-22-27.png";
 import EachineRacer250ARF from "../../../../public/images/6259381_R_SET.png";
 import DroneXiroXplorer from "../../../../public/images/xiro-xplorer-g-idealni.png";
 import HubsanX4Plus from "../../../../public/images/hubsan-x4-plus-mini-quadcopter.png";
@@ -35,19 +35,22 @@ import Blog3 from "../../../../public/images/2ff2ba0051687eef5ca0459cf942940c_L.
 
 const productsInfo = [
     {
-        title: "Drone blh9180",
+        title: "DJI TELLO",
         src: DroneBlh9180,
-        link: "drone-blh9180"
+        link: "dji-tello",
+        price: 80000
     },
     {
-        title: "Hubsan-H501S",
+        title: "Parrot ARDRONE 2.0 + GPS",
         src: HubsanH501S,
-        link: "hubsan-h501s"
+        link: "parrot-ardrone-2-0-GPS",
+        price: 120000
     },
     {
-        title: "Cheerson CX-10c",
+        title: "Atelier drones programmables avec Python",
         src: CheersonCX10c,
-        link: "cheerson-cx-10c"
+        link: "atelier-drones-programmables-avec-python",
+        price: 10000
     },
     {
         title: "Eachine Racer 250 ARF",
@@ -107,7 +110,7 @@ class Home extends Component {
         let content = <Spinner />
 
         if (productsInfo && blogInfo) {
-            const articleCards = productsInfo.map(({ title, src }) => <ArticleCard key={src} title={title} src={src} subtitle="" />);
+            const articleCards = productsInfo.map(product => <ArticleCard key={Math.random() + JSON.stringify(product)} {...product} />);
             const newsCards = blogInfo.map(({ src, link, title, children }) => <NewsCard key={link} src={src} link={link} title={title}>{children}</NewsCard>);
 
             content = <>
@@ -128,11 +131,11 @@ class Home extends Component {
                         <Container className="h-100">
                             <Row className="justify-content-end position-relative align-items-center" style={{ height: '50%' }}>
                                 <Col lg={6} className="pl-4">
-                                    <Title>Nature from the air</Title>
+                                    <Title>Des Kits d'education</Title>
 
                                     <p className="mb-4 text-300">
-                                        Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo. Nunc vel nibh tempor, pharetra lectus congue, luctus orci nec ultricies sem efficitur quis. Integer bibendum eget metus ac accumsan.
-                                            </p>
+                                        Fournissez vous en matériel d'éducation pour vos projets, Nos kits d'education adaptés pour des prototypages de drones modulaires (aériens, sous-marins, mobiles)
+                                    </p>
 
                                     <CenterButton pill color="dark">Ask for price</CenterButton>
                                 </Col>
@@ -140,10 +143,10 @@ class Home extends Component {
 
                             <Row className="position-relative align-items-center" style={{ height: '50%' }}>
                                 <Col lg={6} className="pr-4">
-                                    <Title>City from the air</Title>
+                                    <Title>Ateliers en ligne</Title>
 
                                     <p className="mb-4 text-300">
-                                        Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo. Nunc vel nibh tempor, pharetra lectus congue, luctus orci nec ultricies sem efficitur quis. Integer bibendum eget metus ac accumsan.
+                                        Formez vous depuis chez vous chaque weekend de manière accélerée avec vos kits de manière personnalisée et a la demande
                                     </p>
 
                                     <CenterButton pill color="dark">Ask for price</CenterButton>
@@ -178,17 +181,18 @@ class Home extends Component {
                 <div className="position-relative min-vh-100">
                     <div className="position-absolute h-100 w-100">
                         <Col sm={9} xl={6} lg={7} md={8} id="banner" className="text-white mx-auto text-center" >
-                            <h1 className="display-4 text-700">Get the best drones here</h1>
+                            <h1 className="display-4 text-700">Obtenir vos kits et accessoires High Tech</h1>
 
                             <p className="text-300 text-large">
-                                Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo.
-                                Nunc vel nibh tempor, pharetra lectus congue, luctus orci.
+                                Des kits d'education, l'électronique pour vos projets , des formations certifiantes
                             </p>
 
                             <div className="text-large mt-5">
-                                <BetweenButton size="lg" color="light" pill icon="dollar-sign" className="mr-3">
-                                    Ask for price
-                                </BetweenButton>
+                                <a href="https://api.whatsapp.com/send?phone=+237%20656395217" className="text-decoration-none text-reset">
+                                    <BetweenButton size="lg" color="light" pill icon="dollar-sign" className="mr-3">
+                                        Ask for price
+                                    </BetweenButton>
+                                </a>
                                 <BetweenButton size="lg" color="outline-light" pill icon="play">
                                     Watch video
                                 </BetweenButton>
@@ -208,27 +212,27 @@ class Home extends Component {
                                     title="From air"
                                 >
                                     Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo.
-                                    </UnderCarouselBlock>
+                                </UnderCarouselBlock>
                                 <UnderCarouselBlock
                                     border
                                     icon="fighter-jet"
                                     title="Best drones"
                                 >
                                     Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo.
-                                    </UnderCarouselBlock>
+                                </UnderCarouselBlock>
                                 <UnderCarouselBlock
                                     border
                                     icon="tachometer-alt"
                                     title="Speed"
                                 >
                                     Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo.
-                                    </UnderCarouselBlock>
+                                </UnderCarouselBlock>
                                 <UnderCarouselBlock
                                     icon="robot"
                                     title="Long range"
                                 >
                                     Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo.
-                                    </UnderCarouselBlock>
+                                </UnderCarouselBlock>
                             </Row>
                         </div>
 

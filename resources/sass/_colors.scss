@@ -13,17 +13,23 @@ $myyellow: #ffcd28;
 $darkyellow: darken($myyellow, 10%);
 $mygreen: #17a5aa;
 $mylemongreen: #f6ff01;
-$darkgreen: #060F2A;
+$darkgreen: #060f2a;
 $white: #ffffff;
 $gray: #aaa;
 $black: #000000;
+
+$facebook: #4267b2;
+$linkedin: #0e76a8;
+$youtube: #ff0000;
+$whatsapp: #25d366;
 
 // Colors
 $colors: "green" $mygreen $white, "lemongreen" $mylemongreen $dark, "darkblue" $darkgreen $white,
   "yellow" $myyellow $black, "darkyellow" $darkyellow $white, "red" $myred $white, "purered" $purered $white,
   "orange" $myorange $white, "oranger" $myoranger $white, "scarlet" $scarlet $white, "blue" $myblue $white,
   "lightblue" $mylightblue $white, "pink" $mypink $white, "mydarkblue" $mydarkblue $white, "white" $white $black,
-  "black" $black $white, "gray" $gray $white;
+  "black" $black $white, "gray" $gray $white "facebook" $facebook $white, "linkedin" $linkedin $white,
+  "youtube" $youtube $white, "whatsapp" $whatsapp $white;
 @each $name, $color, $font in $colors {
   .text-#{$name} {
     color: $color !important;
@@ -89,7 +95,8 @@ $colors: "green" $mygreen $white, "lemongreen" $mylemongreen $dark, "darkblue" $
   }
 }
 
-$gradients: "scarlet" $scarlet $myred 259deg, "orange" $myoranger $brown 253deg, "blue" $myblue $mydarkblue 210deg, "dark" $black $dark 39deg;
+$gradients: "scarlet" $scarlet $myred 259deg, "orange" $myoranger $brown 253deg, "blue" $myblue $mydarkblue 210deg,
+  "dark" $black $dark 39deg;
 @each $name, $primary, $secondary, $angle in $gradients {
   .bg-#{$name}-gradient {
     background-image: linear-gradient($angle, $primary 0%, $secondary 100%) !important;
