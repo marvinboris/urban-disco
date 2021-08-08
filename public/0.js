@@ -30,6 +30,17 @@ module.exports = "/images/ABOUT1.jpg?bb5cca9bacc507e709b141415dbe123e";
 
 /***/ }),
 
+/***/ "./public/images/Drone.png":
+/*!*********************************!*\
+  !*** ./public/images/Drone.png ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/Drone.png?93a007fe6243b535df1d2d6f485b8a9b";
+
+/***/ }),
+
 /***/ "./public/images/Tab01.jpg":
 /*!*********************************!*\
   !*** ./public/images/Tab01.jpg ***!

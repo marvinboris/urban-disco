@@ -9,12 +9,12 @@ const navigationItems = ({ isAuth, name, logoutHandler, role, cartItemsNumber, n
     return (
         <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto d-flex align-items-center" navbar>
-                <NavigationItem icon="home" href="/">Home</NavigationItem>
-                <NavigationItem icon="user" href="/about-us">About Us</NavigationItem>
-                <NavigationItem exact={false} icon="book" href="/courses">Courses</NavigationItem>
-                <NavigationItem exact={false} icon="plane" href="/products">Products</NavigationItem>
-                <NavigationItem exact={false} icon="blog" href="/blog">Blog</NavigationItem>
-                <NavigationItem icon="envelope" href="/contact">Contact</NavigationItem>
+                <NavigationItem icon="home" href="/">Accueil</NavigationItem>
+                <NavigationItem icon="user" href="#about">A propos</NavigationItem>
+                <NavigationItem icon="book" href="//tutoriels.themasterofarts.com">Cours</NavigationItem>
+                <NavigationItem exact={false} icon="plane" href="#products">Produits</NavigationItem>
+                <NavigationItem exact={false} icon="blog" href="//themasterofarts.com">Blog</NavigationItem>
+                <NavigationItem icon="envelope" href="#footer">Contact</NavigationItem>
             </Nav>
         </Collapse>
     );

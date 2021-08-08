@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Col, Container, Row, Button } from "reactstrap";
 
-import "./Home.css";
 import PresentationalContainer from "../../components/UI/PresentationalContainer/PresentationalContainer";
 import HomeCarousel from "./Carousel/Carousel";
 import BetweenButton from "../../components/UI/Button/BetweenButton/BetweenButton";
@@ -16,7 +15,9 @@ import Spinner from "../../components/UI/Spinner/Spinner";
 
 import * as actions from "../../store/actions";
 
-import Drone from "../../../../public/images/Drone.png";
+import "./Home.css";
+
+import Drone from "../../../../public/images/computer.png";
 import FotoTop from "../../../../public/images/photo_2021-08-07_21-08-43.jpg";
 import FotoBottom from "../../../../public/images/photo_2021-08-07_21-06-47.jpg";
 
@@ -24,9 +25,6 @@ import FotoBottom from "../../../../public/images/photo_2021-08-07_21-06-47.jpg"
 import DroneBlh9180 from "../../../../public/images/photo_2021-08-07_20-22-16.jpg";
 import HubsanH501S from "../../../../public/images/photo_2021-08-07_20-23-17.jpg";
 import CheersonCX10c from "../../../../public/images/image_2021-08-07_21-22-27.png";
-import EachineRacer250ARF from "../../../../public/images/6259381_R_SET.png";
-import DroneXiroXplorer from "../../../../public/images/xiro-xplorer-g-idealni.png";
-import HubsanX4Plus from "../../../../public/images/hubsan-x4-plus-mini-quadcopter.png";
 
 // Blog Images
 import Blog1 from "../../../../public/images/ada9a09acea936d776a6f55c82778c43_L.jpg";
@@ -37,35 +35,20 @@ const productsInfo = [
     {
         title: "DJI TELLO",
         src: DroneBlh9180,
-        link: "dji-tello",
+        link: "//api.whatsapp.com/send?phone=+237%20656395217",
         price: 80000
     },
     {
         title: "Parrot ARDRONE 2.0 + GPS",
         src: HubsanH501S,
-        link: "parrot-ardrone-2-0-GPS",
+        link: "//api.whatsapp.com/send?phone=+237%20656395217",
         price: 120000
     },
     {
         title: "Atelier drones programmables avec Python",
         src: CheersonCX10c,
-        link: "atelier-drones-programmables-avec-python",
+        link: "//api.whatsapp.com/send?phone=+237%20656395217",
         price: 10000
-    },
-    {
-        title: "Eachine Racer 250 ARF",
-        src: EachineRacer250ARF,
-        link: "eachine-racer-250-arf"
-    },
-    {
-        title: "Drone Xiro-Xplorer",
-        src: DroneXiroXplorer,
-        link: "drone-xiro-xplorer"
-    },
-    {
-        title: "Hubsan-x4-plus",
-        src: HubsanX4Plus,
-        link: "hubsan-x4-plus"
     },
 ];
 
@@ -115,10 +98,10 @@ class Home extends Component {
 
             content = <>
                 <PresentationalContainer bg="transparent">
-                    <div className="text-center py-5">
-                        <Title>Our products</Title>
+                    <div className="text-center py-5" id="products">
+                        <Title>Nos produits</Title>
 
-                        <p className="mb-4 text-300">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                        <p className="mb-4 text-300">Sélectionnez le produit qui vous intéresse et vous recevrez les instructions de paiement et livraison sur WhatsApp.</p>
 
                         <Row>
                             {articleCards}
@@ -126,18 +109,20 @@ class Home extends Component {
                     </div>
                 </PresentationalContainer>
 
-                <div className="position-relative container-fluid bg-white">
+                <div className="position-relative container-fluid bg-white" id="about">
                     <div className="position-absolute h-100 w-100" style={{ top: 0, left: 0 }}>
                         <Container className="h-100">
                             <Row className="justify-content-end position-relative align-items-center" style={{ height: '50%' }}>
                                 <Col lg={6} className="pl-4">
-                                    <Title>Des Kits d'education</Title>
+                                    <Title>Des kits d'éducation</Title>
 
                                     <p className="mb-4 text-300">
                                         Fournissez vous en matériel d'éducation pour vos projets, Nos kits d'education adaptés pour des prototypages de drones modulaires (aériens, sous-marins, mobiles)
                                     </p>
 
-                                    <CenterButton pill color="dark">Ask for price</CenterButton>
+                                    <a href="//api.whatsapp.com/send?phone=+237%20656395217" className="text-decoration-none text-reset">
+                                        <CenterButton pill color="dark">Demander le prix</CenterButton>
+                                    </a>
                                 </Col>
                             </Row>
 
@@ -149,7 +134,9 @@ class Home extends Component {
                                         Formez vous depuis chez vous chaque weekend de manière accélerée avec vos kits de manière personnalisée et a la demande
                                     </p>
 
-                                    <CenterButton pill color="dark">Ask for price</CenterButton>
+                                    <a href="//api.whatsapp.com/send?phone=+237%20656395217" className="text-decoration-none text-reset">
+                                        <CenterButton pill color="dark">Demander le prix</CenterButton>
+                                    </a>
                                 </Col>
                             </Row>
                         </Container>
@@ -164,9 +151,9 @@ class Home extends Component {
 
                 <PresentationalContainer bg="transparent">
                     <div className="text-center py-5">
-                        <Title>Our blog</Title>
+                        <Title>Notre blog</Title>
 
-                        <p className="mb-4 text-300">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                        <p className="mb-4 text-300">Retrouvez les dernières nouvelles et actualités du domaine qui est le nôtre.</p>
 
                         <Row>
                             {newsCards}
@@ -184,18 +171,21 @@ class Home extends Component {
                             <h1 className="display-4 text-700">Obtenir vos kits et accessoires High Tech</h1>
 
                             <p className="text-300 text-large">
-                                Des kits d'education, l'électronique pour vos projets , des formations certifiantes
+                                Des kits d'education, l'électronique pour vos projets , des formations certifiantes et du financement participatif.
                             </p>
 
                             <div className="text-large mt-5">
-                                <a href="https://api.whatsapp.com/send?phone=+237%20656395217" className="text-decoration-none text-reset">
+                                <a href="//api.whatsapp.com/send?phone=+237%20656395217" className="text-decoration-none text-reset">
                                     <BetweenButton size="lg" color="light" pill icon="dollar-sign" className="mr-3">
-                                        Ask for price
+                                        Demander le prix
                                     </BetweenButton>
                                 </a>
-                                <BetweenButton size="lg" color="outline-light" pill icon="play">
-                                    Watch video
-                                </BetweenButton>
+
+                                <a href="//ma64industry.themasterofarts.com" className="text-decoration-none text-reset">
+                                    <BetweenButton size="lg" color="outline-light" pill icon="dollar-sign">
+                                        Crowdfunding
+                                    </BetweenButton>
+                                </a>
                             </div>
                         </Col>
                         <HomeCarousel />
@@ -211,33 +201,35 @@ class Home extends Component {
                                     icon="plane"
                                     title="From air"
                                 >
-                                    Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo.
+                                    {/* Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo. */}
                                 </UnderCarouselBlock>
                                 <UnderCarouselBlock
                                     border
                                     icon="fighter-jet"
                                     title="Best drones"
                                 >
-                                    Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo.
+                                    {/* Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo. */}
                                 </UnderCarouselBlock>
                                 <UnderCarouselBlock
                                     border
                                     icon="tachometer-alt"
                                     title="Speed"
                                 >
-                                    Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo.
+                                    {/* Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo. */}
                                 </UnderCarouselBlock>
                                 <UnderCarouselBlock
                                     icon="robot"
                                     title="Long range"
                                 >
-                                    Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo.
+                                    {/* Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo. */}
                                 </UnderCarouselBlock>
                             </Row>
                         </div>
 
                         <div className="text-center mt-5">
-                            <CenterButton color="dark" pill>Ask for price</CenterButton>
+                            <a href="//api.whatsapp.com/send?phone=+237%20656395217" className="text-decoration-none text-reset">
+                                <CenterButton pill color="dark">Demander le prix</CenterButton>
+                            </a>
                         </div>
                     </Container>
                 </PresentationalContainer>
@@ -247,18 +239,19 @@ class Home extends Component {
                     <Container style={{ zIndex: 2 }} className="py-5">
                         <Row className="py-5">
                             <Col lg={8}>
-                                <Title>Nature from the air</Title>
+                                <Title>Assistance à la Qualification</Title>
 
                                 <p className="text-300 w-75 mb-4">
-                                    Mauris consequat libero metus, nec ultricies sem efficitur quis. Integer bibendum eget metus ac accumsan. Integer sit amet lacus egestas, semper est quis, viverra ex.
+                                    Réussissez votre projet d'études en IA, Robotique, Data Science grâce à des programmes en ligne.
                                 </p>
 
                                 <Row className="text-300">
-                                    <Characteristic number="1">Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo. Nunc vel nibh tempor, pharetra lectus congue, luctus orci.</Characteristic>
-                                    <Characteristic number="2">Mauris consequat libero metus, nec ultricies sem efficitur quis. Integer bibendum eget metus ac accumsan.</Characteristic>
-                                    <Characteristic number="3">Integer sit amet lacus egestas, semper est quis, viverra ex. Mauris consequat libero metus, nec ultricies sem efficitur quis.</Characteristic>
-                                    <Characteristic number="4">Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo. Nunc vel nibh tempor, pharetra lectus congue, luctus orci.</Characteristic>
-                                    <Characteristic number="5">Mauris consequat libero metus, nec ultricies sem efficitur quis. Integer bibendum eget metus ac accumsan.</Characteristic>
+                                    <Characteristic number="1">La jeunesse de la francophonie vise les hautes ingénieries.</Characteristic>
+                                    <Characteristic number="2">Un intérêt croissant pour les métiers informatiques depuis la crise du Covid.</Characteristic>
+                                    <Characteristic number="3">En cycle Licence, beaucoup aspirent à des spécialisations.</Characteristic>
+                                    <Characteristic number="4">Themasterofarts offre des tutoriels, du matériel, expertise et télé-expertise pour l'innovation.</Characteristic>
+                                    <Characteristic number="5">Nous offrons des programmes garantissant des bourses, l'accès à des Master d'élite.</Characteristic>
+                                    <Characteristic number="6">Nos partenariats rendent l'innovation possible aux jeunes entrepreneurs.</Characteristic>
                                 </Row>
                             </Col>
                         </Row>
