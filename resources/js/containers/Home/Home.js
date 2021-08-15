@@ -149,7 +149,7 @@ class Home extends Component {
                     </Row>
                 </div>
 
-                <PresentationalContainer bg="transparent">
+                {/* <PresentationalContainer bg="transparent">
                     <div className="text-center py-5">
                         <Title>Notre blog</Title>
 
@@ -159,7 +159,7 @@ class Home extends Component {
                             {newsCards}
                         </Row>
                     </div>
-                </PresentationalContainer>
+                </PresentationalContainer> */}
             </>;
         }
 
