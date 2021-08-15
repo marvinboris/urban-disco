@@ -88,7 +88,7 @@ const footer = () => (
                                 <a className="w-100 text-decoration-none text-reset d-block" href="//www.facebook.com/Themasterofarts"><img src={Facebook} className="img-fluid" /></a>
                             </FooterBlock>
                         </Col>
-                        <Col lg={3}>
+                        {/* <Col lg={3}>
                             <FooterBlock title="Nous retrouver sur Maps">
                                 <div className="rounded overflow-hidden mb-3">
                                     <iframe width="100%" height="150" src="//maps.google.com/maps?width=700&amp;height=150&amp;hl=en&amp;q=La%20maison%20du%20bitcoin+(Auto-%C3%A9cole%20Universit%C3%A9)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" />
@@ -98,7 +98,7 @@ const footer = () => (
                                     <iframe width="100%" height="150" src="//maps.google.com/maps?width=700&amp;height=150&amp;hl=en&amp;q=78+Rte+du+Rhin,+67400+Illkirch-Graffenstaden&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" />
                                 </div>
                             </FooterBlock>
-                        </Col>
+                        </Col> */}
                     </Row>
                 </footer>
                 <footer className="text-light pb-4">
