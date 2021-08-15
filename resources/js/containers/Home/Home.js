@@ -235,7 +235,7 @@ class Home extends Component {
                 </PresentationalContainer>
 
                 <div className="position-relative bg-white">
-                    <div className="position-absolute w-75 h-100" style={{ top: 0, right: 0, background: 'url("' + Drone + '") no-repeat top right', backgroundSize: 'contain' }}></div>
+                    <div className="position-absolute w-50 h-100" style={{ top: 0, right: 0, background: 'url("' + Drone + '") no-repeat top right', backgroundSize: 'contain' }}></div>
                     <Container style={{ zIndex: 2 }} className="py-5">
                         <Row className="py-5">
                             <Col lg={8}>
