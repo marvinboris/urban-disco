@@ -2,6 +2,10 @@
 
 namespace App\Exceptions;
 
+
+use GuzzleHttp\Exception\RequestException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
@@ -27,6 +31,19 @@ class Handler extends ExceptionHandler
     ];
 
     /**
+     * Register the exception handling callbacks for the application.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->reportable(function (Throwable $e) {
+            //
+        });
+    }
+
+
+    /**
      * Report or log an exception.
      *
      * @param  \Throwable  $exception
@@ -50,6 +67,14 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        return parent::render($request, $exception);
+        if ($exception instanceof ModelNotFoundException) {
+            return response()->json(['error' => 'Entry for ' . str_replace('App\\', '', $exception->getModel()) . ' not found'], 404);
+        } else if ($exception instanceof RequestException) {
+            return response()->json(['error' => 'External API call failed.'], 500);
+        } else if ($exception instanceof ValidationException) {
+            return response()->json(['errors' => $exception->errors()], 422);
+        }
+
+        return response()->json(['error' => parent::convertExceptionToArray($exception)], 500);
     }
 }

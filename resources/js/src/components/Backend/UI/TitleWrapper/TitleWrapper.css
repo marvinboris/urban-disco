@@ -1,0 +1,15 @@
+.UI.TitleWrapper + div {
+    padding: 1rem;
+}
+
+@media (min-width: 800px) {
+    .UI.TitleWrapper + div {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 1900px) {
+    .UI.TitleWrapper + div {
+        padding: 3rem;
+    }
+}

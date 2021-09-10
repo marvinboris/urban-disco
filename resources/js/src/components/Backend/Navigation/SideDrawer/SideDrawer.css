@@ -1,0 +1,55 @@
+.App.SideDrawer {
+	width: var(--app-sidebar-width);
+	top: 70;
+	z-index: 1040;
+	height: calc(100vh);
+	left: -100%;
+}
+
+.App.SideDrawer .navbar-nav {
+	height: calc(100vh - 310px);
+	width: calc(100% + 1rem);
+	overflow: auto;
+}
+
+.App.SideDrawer .backdrop {
+	height: calc(100vh);
+	display: none;
+	width: 200%;
+}
+
+.App.SideDrawer nav.flex-fill {
+	overflow-y: auto;
+	scrollbar-color: #880015;
+	scrollbar-width: 3px;
+	height: calc(100% - 150px);
+}
+
+.App.SideDrawer nav.flex-fill::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #f5f5f5;
+}
+
+.App.SideDrawer nav.flex-fill::-webkit-scrollbar {
+	width: 3px;
+	background-color: #f5f5f5;
+}
+
+.App.SideDrawer nav.flex-fill::-webkit-scrollbar-thumb {
+	background-color: #880015;
+}
+
+@media (min-width: 768px) {
+	.App.SideDrawer {
+		left: 0 !important;
+	}
+
+	.App.SideDrawer .backdrop {
+		display: none !important;
+	}
+
+	.App.SideDrawer .navbar-nav {
+		height: calc(100vh - 440px);
+	}
+}

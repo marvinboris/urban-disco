@@ -1,0 +1,74 @@
+.Addon {
+    width: 100%;
+    padding: 4px;
+}
+
+.Addon .img {
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transform: scale(1) rotate(0deg);
+    transition: all 0.25s;
+}
+
+.Addon:hover .img {
+    transform: scale(1.21) rotate(10deg);
+}
+
+.Addon .name {
+    max-width: calc(100% - 30px);
+}
+
+.Addon .description {
+    max-width: 100%;
+}
+
+.Addon .action {
+    padding: 0;
+    transition: all 0.25s;
+}
+
+.Addon .action:hover {
+    padding: 0 46px;
+}
+
+.Addon .view,
+.Addon .delete {
+    position: absolute;
+    opacity: 0;
+    transform: translate(0);
+    transition: all 0.25s;
+    z-index: 1;
+}
+
+.Addon .edit {
+    position: relative;
+    z-index: 2;
+}
+
+.Addon .action:hover .view {
+    transform: translateX(calc(-100% - 8px));
+}
+
+.Addon .action:hover .delete {
+    transform: translateX(calc(100% + 8px));
+}
+
+.Addon .action:hover .view,
+.Addon .action:hover .delete {
+    opacity: 1;
+}
+
+@media (min-width: 1300px) {
+    .Addon {
+        width: calc(50%);
+    }
+}
+
+@media (min-width: 1600px) {
+    .Addon {
+        width: calc(33.33%);
+    }
+}

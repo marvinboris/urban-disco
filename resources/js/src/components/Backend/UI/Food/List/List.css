@@ -1,0 +1,7 @@
+.List .flex-container {
+    display: flex;
+    flex-flow: column wrap;
+    max-height: var(--flex-container-height);
+    padding-bottom: 50px;
+    align-content: flex-start;
+}

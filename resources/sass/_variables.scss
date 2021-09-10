@@ -1,8 +1,8 @@
 // Body
-$body-bg: #f6f6f6;
+$body-bg: #f8fafc;
 
 // Typography
-$font-family-sans-serif: Montserrat, Comfortaa, 'Montserrat Alternates', sans-serif;
+$font-family-sans-serif: Poppins, Montserrat, Comfortaa, "Montserrat Alternates", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
@@ -17,3 +17,13 @@ $yellow: #0e0d0c;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+// Grid breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 600px,
+    md: 800px,
+    lg: 1000px,
+    xl: 1280px,
+    xxl: 1900px,
+);

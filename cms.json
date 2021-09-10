@@ -1,0 +1,637 @@
+{
+    "global": {
+        "app_name": "Master ART 64",
+        "company_name": "Master ART 64",
+        "company_logo": "\/images\/20200217_014932-removebg-preview-black.png",
+        "logo": "\/images\/logo.png"
+    },
+    "pages": {
+        "fr": {
+            "general": {
+                "date": "Date",
+                "time": "Time",
+                "home": "Home",
+                "loading": "Loading",
+                "days": [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ],
+                "months": [
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "Dec"
+                ]
+            },
+            "components": {
+                "form": {
+                    "save": "Save",
+                    "save_add": "Save & Add",
+                    "selected_file": "File selected",
+                    "active": "Active",
+                    "inactive": "Inactive",
+                    "check": "Check"
+                },
+                "list": {
+                    "action": "Action",
+                    "all": "All",
+                    "first": "First",
+                    "last": "Last",
+                    "loading": "Loading",
+                    "print": "Print",
+                    "pdf": "PDF",
+                    "csv": "CSV",
+                    "excel": "Excel",
+                    "search": "Search",
+                    "see": "See",
+                    "show": "Show",
+                    "sl": "SL",
+                    "showing": "Showing",
+                    "from": "from",
+                    "entries": {
+                        "singular": "entry",
+                        "plural": "entries"
+                    }
+                },
+                "course": {
+                    "duration": "Duration",
+                    "enroled": "Enroled",
+                    "internship": "Internship",
+                    "difficulty": "Difficulty",
+                    "days": "days"
+                }
+            },
+            "auth": {
+                "footer": {
+                    "copyright": "Copyright",
+                    "all_rights": "All rights reserved by"
+                },
+                "user": {
+                    "login": {
+                        "dont_be_late": "Welcome",
+                        "get_in": "Get In",
+                        "sign_in": "Sign In",
+                        "email_address": "E-mail address",
+                        "password": "Password"
+                    }
+                },
+                "admin": {
+                    "login": {
+                        "sign_in_to": "Sign In to",
+                        "sign_in": "Sign In",
+                        "admin_panel": "Admin Panel",
+                        "email_address": "E-mail address",
+                        "password": "Password",
+                        "sms": "SMS",
+                        "email": "E-mail",
+                        "otp_method": "OTP Method"
+                    },
+                    "verify": {
+                        "enter": "Enter",
+                        "verification_code": "Verification code",
+                        "continue": "Continue",
+                        "didnt_receive_code": "Didn't receive code",
+                        "resend": "Resend"
+                    }
+                }
+            },
+            "messages": {
+                "auth": {
+                    "admin": {
+                        "not_found": "These credentials do not match our records.",
+                        "invalid": "Verification code is invalid.",
+                        "sent": "Verification code successfully sent."
+                    },
+                    "user": {
+                        "inactive": "Your account is not active. Please, contact the administrator.",
+                        "unauthorized": "Unauthorized",
+                        "sent": "Reset password link successfully sent.",
+                        "reset": "Your password has been successfully reset.",
+                        "failure": "Failure."
+                    }
+                },
+                "admins": {
+                    "not_found": "Admin not found.",
+                    "created": "Admin successfully created.",
+                    "updated": "Admin successfully updated.",
+                    "deleted": "Admin successfully deleted."
+                },
+                "users": {
+                    "not_found": "User not found.",
+                    "created": "User successfully created.",
+                    "updated": "User successfully updated.",
+                    "deleted": "User successfully deleted."
+                },
+                "roles": {
+                    "not_found": "Role not found.",
+                    "created": "Role successfully created.",
+                    "updated": "Role successfully updated.",
+                    "deleted": "Role successfully deleted."
+                },
+                "features": {
+                    "not_found": "Feature not found.",
+                    "created": "Feature successfully created.",
+                    "updated": "Feature successfully updated.",
+                    "deleted": "Feature successfully deleted."
+                },
+                "languages": {
+                    "not_found": "Language not found.",
+                    "created": "Language successfully created.",
+                    "updated": "Language successfully updated.",
+                    "deleted": "Language successfully deleted."
+                },
+                "notifications": {
+                    "not_found": "Notification not found."
+                },
+                "cms": {
+                    "not_found": "Content not found.",
+                    "updated": "Content successfully updated."
+                },
+                "settings": {
+                    "password": "Incorrect password.",
+                    "not_found": "Setting not found.",
+                    "created": "Setting successfully created.",
+                    "updated": "Setting successfully updated.",
+                    "deleted": "Setting successfully deleted."
+                },
+                "methods": {
+                    "not_found": "Method not found.",
+                    "created": "Method successfully created.",
+                    "updated": "Method successfully updated.",
+                    "deleted": "Method successfully deleted."
+                },
+                "post_categories": {
+                    "not_found": "Post category not found.",
+                    "created": "Post category succesfully created.",
+                    "updated": "Post category successfully updated.",
+                    "deleted": "Post category successfully deleted."
+                },
+                "posts": {
+                    "not_found": "Post not found.",
+                    "created": "Post succesfully created.",
+                    "updated": "Post successfully updated.",
+                    "deleted": "Post successfully deleted."
+                },
+                "brands": {
+                    "not_found": "Brand not found.",
+                    "created": "Brand succesfully created.",
+                    "updated": "Brand successfully updated.",
+                    "deleted": "Brand successfully deleted."
+                },
+                "products": {
+                    "not_found": "Product not found.",
+                    "created": "Product succesfully created.",
+                    "updated": "Product successfully updated.",
+                    "deleted": "Product successfully deleted."
+                }
+            },
+            "backend": {
+                "header": {
+                    "sign_out": "Sign out",
+                    "no_message": "No message",
+                    "no_notification": "No notification",
+                    "logout": "Logout",
+                    "close": "Close",
+                    "sure_logout": "Are you sure you want to logout",
+                    "you_have": "You have",
+                    "messages": "messages",
+                    "view_all_messages": "View all messages",
+                    "unread_notification": "unread notification",
+                    "unread_notifications": "unread notifications",
+                    "view_all_notifications": "View all notifications"
+                },
+                "footer": {
+                    "copyright": "Copyright",
+                    "all_rights": "All rights reserved by"
+                },
+                "sidebar": {
+                    "admin": "Administrator",
+                    "user": "User",
+                    "menu": {
+                        "dashboard": "Dashboard",
+                        "admins": {
+                            "title": "Admins",
+                            "add": "Add admin",
+                            "index": "Admin list"
+                        },
+                        "users": {
+                            "title": "Users",
+                            "add": "Add user",
+                            "index": "User list"
+                        },
+                        "roles": {
+                            "title": "Roles",
+                            "add": "Add role",
+                            "index": "Role list"
+                        },
+                        "features": {
+                            "title": "Features",
+                            "add": "Add feature",
+                            "index": "Feature list"
+                        },
+                        "languages": {
+                            "title": "Languages",
+                            "add": "Add language",
+                            "index": "Language list"
+                        },
+                        "cms": {
+                            "title": "CMS",
+                            "global": "Global",
+                            "general": "General",
+                            "components": "Components",
+                            "auth": "Auth",
+                            "messages": "Messages",
+                            "backend": "Backend",
+                            "frontend": "Frontend"
+                        },
+                        "notifications": "Notifications",
+                        "settings": {
+                            "title": "Settings",
+                            "cms": "CMS",
+                            "language": "Language settings"
+                        },
+                        "methods": {
+                            "title": "Methods",
+                            "add": "Add method",
+                            "index": "Method list"
+                        },
+                        "post_categories": {
+                            "title": "Post categories",
+                            "add": "Add post category",
+                            "index": "Post category list"
+                        },
+                        "posts": {
+                            "title": "Posts",
+                            "add": "Add post",
+                            "index": "Post list"
+                        },
+                        "brands": {
+                            "title": "Brands",
+                            "add": "Add brand",
+                            "index": "Brand list"
+                        },
+                        "products": {
+                            "title": "Products",
+                            "add": "Add product",
+                            "index": "Product list"
+                        }
+                    }
+                },
+                "pages": {
+                    "dashboard": {
+                        "admin": {
+                            "title": "Admin panel",
+                            "subtitle": "Dashboard",
+                            "blocks": {
+                                "total_restaurants": "Total Restaurants",
+                                "total_plans": "Total Plans",
+                                "total_plans_amount": "Total Plans Amount",
+                                "total_recharges": "Total Recharges Amount"
+                            }
+                        },
+                        "user": {
+                            "title": "User panel",
+                            "subtitle": "Dashboard",
+                            "blocks": {
+                                "total_restaurants": "Total Restaurants",
+                                "total_plans": "Total Plans",
+                                "total_plans_amount": "Total Plans Amount",
+                                "total_recharges": "Total Recharges Amount"
+                            }
+                        }
+                    },
+                    "cms": {
+                        "title": "CMS",
+                        "global": "Global",
+                        "general": "General",
+                        "messages": "Messages",
+                        "frontend": "Frontend",
+                        "components": "Components",
+                        "backend": "Backend",
+                        "auth": "Auth",
+                        "form": {
+                            "logo": "Logo",
+                            "app_name": "App name",
+                            "company_name": "Company name"
+                        }
+                    },
+                    "admins": {
+                        "title": "Administrators",
+                        "add": "Add admin",
+                        "edit": "Edit admin",
+                        "index": "Admin list",
+                        "form": {
+                            "name": "Admin name",
+                            "full_name": "Full name",
+                            "phone": "Phone number",
+                            "password": "Password",
+                            "password_confirmation": "Confirm password",
+                            "email": "E-mail address",
+                            "admin_photo": "Admin photo",
+                            "photo": "Photo"
+                        }
+                    },
+                    "users": {
+                        "title": "Users",
+                        "add": "Add user",
+                        "edit": "Edit user",
+                        "index": "User list",
+                        "form": {
+                            "name": "User name",
+                            "full_name": "Full name",
+                            "phone": "Phone number",
+                            "password": "Password",
+                            "password_confirmation": "Confirm password",
+                            "email": "E-mail address",
+                            "role": "Role",
+                            "select_role": "Select role",
+                            "user_photo": "User photo",
+                            "photo": "Photo"
+                        }
+                    },
+                    "roles": {
+                        "title": "Roles",
+                        "add": "Add role",
+                        "edit": "Edit role",
+                        "index": "Role list",
+                        "form": {
+                            "name": "Name",
+                            "description": "Description",
+                            "features": "Features",
+                            "created_at": "Created at",
+                            "create": "Create",
+                            "update": "Update",
+                            "delete": "Delete"
+                        }
+                    },
+                    "features": {
+                        "title": "Features",
+                        "add": "Add feature",
+                        "edit": "Edit feature",
+                        "index": "Feature list",
+                        "form": {
+                            "name": "Name",
+                            "prefix": "Prefix",
+                            "created_at": "Created at"
+                        }
+                    },
+                    "languages": {
+                        "title": "Languages",
+                        "add": "Add language",
+                        "edit": "Edit language",
+                        "index": "Language list",
+                        "form": {
+                            "name": "Name",
+                            "abbr": "Abbreviation",
+                            "flag": "Flag",
+                            "select_flag": "Select flag",
+                            "created_at": "Created at"
+                        }
+                    },
+                    "notifications": {
+                        "title": "Notifications",
+                        "show": "Notification details",
+                        "index": "Notification list",
+                        "form": {
+                            "you_have_no_notification": "You have no notification."
+                        }
+                    },
+                    "settings": {
+                        "title": "Settings",
+                        "language": {
+                            "title": "Language settings",
+                            "form": {
+                                "select_language": "Select a language"
+                            }
+                        }
+                    },
+                    "methods": {
+                        "title": "Methods",
+                        "add": "Add method",
+                        "edit": "Edit method",
+                        "index": "Method list",
+                        "form": {
+                            "name": "Method name",
+                            "text": "Method description",
+                            "select_status": "Select status",
+                            "is_active": "Status",
+                            "created_at": "Created at"
+                        }
+                    },
+                    "post_categories": {
+                        "title": "Post Categories",
+                        "add": "Add post category",
+                        "edit": "Edit post category",
+                        "index": "Post category list",
+                        "form": {
+                            "name": "Post category's name",
+                            "slug": "Slug",
+                            "is_active": "Status",
+                            "created_at": "Created at"
+                        }
+                    },
+                    "posts": {
+                        "title": "Posts",
+                        "add": "Add post",
+                        "edit": "Edit post",
+                        "index": "Post list",
+                        "form": {
+                            "title": "Post's Title",
+                            "body": "Post's Body",
+                            "photo": "Post's Photo",
+                            "post_category": "Post Category",
+                            "select_status": "Select status",
+                            "is_active": "Status",
+                            "slug": "Slug",
+                            "select_post_category": "Select post category",
+                            "created_at": "Created at"
+                        }
+                    },
+                    "brands": {
+                        "title": "Brands",
+                        "add": "Add brand",
+                        "edit": "Edit brand",
+                        "index": "Brand list",
+                        "form": {
+                            "name": "Brand's name",
+                            "created_at": "Created at"
+                        }
+                    },
+                    "products": {
+                        "title": "Products",
+                        "add": "Add product",
+                        "edit": "Edit product",
+                        "index": "Product list",
+                        "form": {
+                            "name": "Product's Name",
+                            "description": "Product's Description",
+                            "photo": "Product's Photo",
+                            "price": "Product's Price",
+                            "brand": "Brand",
+                            "select_status": "Select status",
+                            "is_active": "Status",
+                            "slug": "Slug",
+                            "select_brand": "Select brand",
+                            "created_at": "Created at"
+                        }
+                    }
+                }
+            },
+            "frontend": {
+                "header": {
+                    "call_me": "Call me",
+                    "tel": "+237693886386",
+                    "menu": {
+                        "home": "Home",
+                        "results": "Test results",
+                        "faq": "FAQ"
+                    }
+                },
+                "footer": {
+                    "made_with_love": "Made with love",
+                    "by": "by"
+                },
+                "pages": {
+                    "home": {
+                        "banner": {
+                            "carousel": [
+                                {
+                                    "text": {
+                                        "your_career_is_planned": "Your career is planned !",
+                                        "welcome": "Welcome to the enrolment",
+                                        "details": "Please select a course below and proceed with the pre-registration"
+                                    },
+                                    "src": "/images/photo_2021-09-07_11-58-47.jpg"
+                                },
+                                {
+                                    "text": {
+                                        "your_career_is_planned": "Your career is planned !",
+                                        "welcome": "Welcome to the enrolment",
+                                        "details": "Please select a course below and proceed with the pre-registration"
+                                    },
+                                    "src": "/images/photo_2021-09-07_11-58-53.jpg"
+                                },
+                                {
+                                    "text": {
+                                        "your_career_is_planned": "Your career is planned !",
+                                        "welcome": "Welcome to the enrolment",
+                                        "details": "Please select a course below and proceed with the pre-registration"
+                                    },
+                                    "src": "/images/photo_2021-09-07_11-58-57.jpg"
+                                }
+                            ]
+                        },
+                        "courses": {
+                            "title": "Select a course below",
+                            "subtitle": "Find your favorite course below and get started."
+                        },
+                        "enrolments": {
+                            "title": "Enroll now",
+                            "you_have_selected_the_course": "You have selected the course :",
+                            "card": {
+                                "requirements": "Requirements",
+                                "duration": "Duration of course",
+                                "months_training": "months training",
+                                "months_internship": "months internship",
+                                "prizes": "Prizes",
+                                "country": "Country of training",
+                                "enrolments": "Enrolments",
+                                "fees": "Registration fees"
+                            },
+                            "form": {
+                                "success": {
+                                    "your_payment_processed": "Your registration was successfully processed",
+                                    "you_will_receive_notification": "Your will shortly receive a notification by e-mail at"
+                                },
+                                "sections": {
+                                    "user_identification": {
+                                        "title": "User identification",
+                                        "fields": {
+                                            "selected_course": "Selected course",
+                                            "background": "Education background",
+                                            "select_background": "Select education background",
+                                            "name": "Full name",
+                                            "region": "Region",
+                                            "select_region": "Select region",
+                                            "birthdate": "Date of birth",
+                                            "country": "Country",
+                                            "phone": "Phone",
+                                            "email": "E-mail address",
+                                            "passport": "Passport number",
+                                            "last_institute": "Last institute",
+                                            "recent_degree": "Recent degree",
+                                            "degree_score": "Degree score"
+                                        }
+                                    },
+                                    "lingual_skills": {
+                                        "title": "Lingual skills",
+                                        "fields": {
+                                            "select": "Select",
+                                            "english_level": "English level :",
+                                            "reason": "Why are you applying for this course ?",
+                                            "subjects": {
+                                                "writing": "Writing",
+                                                "speaking": "Speaking",
+                                                "reading": "Reading",
+                                                "comprehension": "Comprehension"
+                                            }
+                                        }
+                                    },
+                                    "documents": {
+                                        "title": "Documents",
+                                        "fields": {
+                                            "upload_documents": "Upload documents",
+                                            "documents": {
+                                                "nid": "Upload certified NID",
+                                                "photo": "Upload photo 4x4",
+                                                "diploma": "Upload certified diploma copy",
+                                                "cv": "Upload CV"
+                                            }
+                                        }
+                                    },
+                                    "finished": {
+                                        "title": "Finished",
+                                        "fields": {
+                                            "select_payment_method": "Select payment method",
+                                            "please_select_payment_method": "Please select a payment method",
+                                            "terms": "Accept terms and conditions",
+                                            "policies": "Accept Privacy policies"
+                                        }
+                                    }
+                                },
+                                "nav": {
+                                    "previous": "Previous page",
+                                    "next": "Next page",
+                                    "finish": "Finish payment"
+                                }
+                            }
+                        }
+                    },
+                    "results": {
+                        "banner": {
+                            "title": "Test results"
+                        }
+                    },
+                    "faq": {
+                        "banner": {
+                            "title": "FAQ"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

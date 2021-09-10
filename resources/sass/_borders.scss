@@ -7,6 +7,22 @@
     border-radius: $i * 1px !important;
   }
 
+  .rounded-top-left-#{$i} {
+    border-top-left-radius: $i * 1px !important;
+  }
+
+  .rounded-top-right-#{$i} {
+    border-top-right-radius: $i * 1px !important;
+  }
+
+  .rounded-bottom-left-#{$i} {
+    border-bottom-left-radius: $i * 1px !important;
+  }
+
+  .rounded-bottom-right-#{$i} {
+    border-bottom-right-radius: $i * 1px !important;
+  }
+
   .rounded-bottom-#{$i} {
     border-bottom-left-radius: $i * 1px !important;
     border-bottom-right-radius: $i * 1px !important;
@@ -28,26 +44,11 @@
   }
 }
 
-.border-thin {
-  border-width: 0.25px !important;
-}
-
-.rounded-bottom-pill {
-  border-bottom-left-radius: 50rem !important;
-  border-bottom-right-radius: 50rem !important;
-}
-
-.rounded-top-pill {
-  border-top-left-radius: 50rem !important;
-  border-top-right-radius: 50rem !important;
-}
-
-.rounded-left-pill {
-  border-top-left-radius: 50rem !important;
-  border-bottom-left-radius: 50rem !important;
-}
-
-.rounded-right-pill {
-  border-top-right-radius: 50rem !important;
-  border-bottom-right-radius: 50rem !important;
+.border,
+.border-left,
+.border-right,
+.border-top,
+.border-bottom
+{
+  border-width: 0.25px;
 }

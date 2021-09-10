@@ -1,0 +1,74 @@
+.Category {
+    width: 100%;
+    padding: 4px;
+}
+
+.Category .img {
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transform: scale(1) rotate(0deg);
+    transition: all 0.25s;
+}
+
+.Category:hover .img {
+    transform: scale(1.21) rotate(10deg);
+}
+
+.Category .name { 
+    max-width: calc(100% - 30px);
+}
+
+.Category .description {
+    max-width: 100%;
+}
+
+.Category .action {
+    padding: 0;
+    transition: all .25s;
+}
+
+.Category .action:hover {
+    padding: 0 46px;
+}
+
+.Category .view,
+.Category .delete {
+    position: absolute;
+    opacity: 0;
+    transform: translate(0);
+    transition: all 0.25s;
+    z-index: 1;
+}
+
+.Category .edit {
+    position: relative;
+    z-index: 2;
+}
+
+.Category .action:hover .view {
+    transform: translateX(calc(-100% - 8px));
+}
+
+.Category .action:hover .delete {
+    transform: translateX(calc(100% + 8px));
+}
+
+.Category .action:hover .view,
+.Category .action:hover .delete {
+    opacity: 1;
+}
+
+@media (min-width: 1300px) {
+    .Category {
+        width: calc(50%);
+    }
+}
+
+@media (min-width: 1600px) {
+    .Category {
+        width: calc(33.33%);
+    }
+}

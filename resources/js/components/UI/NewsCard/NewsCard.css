@@ -1,9 +1,0 @@
-.NewsCard img {
-    transform: scale(1) rotate(0deg);
-    transform-origin: center;
-    transition: all .5s;
-}
-
-.NewsCard .card:hover img {
-    transform: scale(1.1) rotate(3deg);
-}

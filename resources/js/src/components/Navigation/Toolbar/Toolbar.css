@@ -1,0 +1,8 @@
+.Frontend .Toolbar {
+    background-color: transparent;
+    transition: all 0.25s;
+}
+
+.Frontend .Toolbar.dark {
+    background-color: rgba(0, 0, 0, 0.8);
+}

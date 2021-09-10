@@ -1,13 +1,6 @@
-@font-face {
-  font-family: Allexist;
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/FontsFree-Net-Allexist.ttf");
-}
-
 // Fonts
-$fonts: "baloo" "Baloo Bhaina" cursive, "comfortaa" Comfortaa, "montserrat" Montserrat,
-  "montserrat-alt" "Montserrat Alternates", "allexist" Allexist, "fa" "Font Awesome 5 Free" Comfortaa;
+$fonts: "montserrat" Montserrat, "poppins" Poppins, "pacifico" Pacifico, "bahnschrift" Bahnschrift,
+  "fa" "Font Awesome 5 Free" Poppins;
 @each $name, $font, $second in $fonts {
   .text-#{$name} {
     font-family: $font, $second, sans-serif;
@@ -16,19 +9,56 @@ $fonts: "baloo" "Baloo Bhaina" cursive, "comfortaa" Comfortaa, "montserrat" Mont
 
 $sizes: "xx-small" xx-small, "x-small" x-small, "small" small, "normal" normal, "medium" medium, "large" large,
   "x-large" x-large, "xx-large" xx-large;
-@each $name, $size in $sizes {
-  .text-#{$name} {
-    font-size: $size !important;
+$weights: 100 "100", 200 "200", 300 "300", 400 "400", 500 "500", 600 "600", 700 "700", 800 "800", 900 "900";
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @for $i from 4 through 80 {
+      .text#{$infix}-#{$i} {
+        font-size: $i * 1px !important;
+      }
+    }
+
+    @each $weight, $name in $weights {
+      .text#{$infix}-#{$name} {
+        font-weight: $weight !important;
+      }
+    }
+
+    @each $name, $size in $sizes {
+      .text#{$infix}-#{$name} {
+        font-size: $size !important;
+      }
+    }
   }
 }
 
-$weights: 100 "100", 200 "200", 300 "300", 400 "400", 500 "500", 600 "600", 700 "700", 800 "800", 900 "900";
-@each $weight, $name in $weights {
-  .text-#{$name} {
-    font-weight: $weight !important;
+@for $i from 1 through 5 {
+  .text-ellipsis-#{$i} {
+    display: -webkit-box;
+    -webkit-line-clamp: $i;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
 .text-shadow {
-  text-shadow: 0 1px 5px rgba(black, .29);
+  text-shadow: 0 1px 5px rgba(black, 0.29);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: 700;
 }

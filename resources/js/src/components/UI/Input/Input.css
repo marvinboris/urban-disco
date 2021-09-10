@@ -1,0 +1,29 @@
+.Backend.Input ::placeholder {
+    color: var(--light);
+    opacity: 1;
+}
+
+.Backend.Input label {
+    position: absolute;
+    left: 101px;
+    top: 1rem;
+    z-index: 1;
+    max-width: calc(100% - 102px - 1rem);
+}
+
+.Backend.Input input[required] + label::after,
+.Backend.Input textarea[required] + label::after {
+    content: "*";
+    color: red;
+}
+
+.Backend.Input input[readonly] + label,
+.Backend.Input textarea[readonly] + label,
+.Backend.Input input[disabled] + label,
+.Backend.Input textarea[disabled] + label,
+.Backend.Input input[required]:valid + label,
+.Backend.Input textarea[required]:valid + label,
+.Backend.Input input:not([value=""]) + label,
+.Backend.Input textarea:not(:invalid) + label {
+    display: none;
+}

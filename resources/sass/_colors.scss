@@ -1,22 +1,35 @@
 // My colors
-$myblue: #005eb1;
-$mylightblue: #62bafe;
-$mydarkblue: #002f59;
-$mypink: #cd105c;
-$scarlet: #8d004b;
+// My colors
+$myblue: #486ba1;
+$nightblue: #1b223f;
+$mylightblue: #42cbd4;
+$darkblue: #303b52;
+$mypink: #ea0d68;
+$scarlet: #8e1737;
 $myred: #ff0b33;
 $purered: #f60929;
-$myorange: #f7941d;
+$myorange: #e98809;
 $myoranger: #f67e09;
-$brown: #7b3f05;
-$myyellow: #ffcd28;
-$darkyellow: darken($myyellow, 10%);
-$mygreen: #17a5aa;
-$mylemongreen: #f6ff01;
-$darkgreen: #060f2a;
+$brown: #402021;
+$lightyellow: #fcd027;
+$gold: #d1b853;
+$myyellow: darken($lightyellow, 10%);
+$mygreen: #439100;
+$mylightgreen: #c8d003;
+$greenblue: #0497a0;
+$darkgreenblue: #005056;
+$greenleaf: #009138;
 $white: #ffffff;
 $gray: #aaa;
 $black: #000000;
+$light: #cacaca;
+$soft: #efefef;
+$darklight: #1b223f;
+$darkhead: #292929;
+$darkfoot: #484848;
+$border: #707070;
+$input: #28324c;
+$transparent: transparent;
 
 $facebook: #4267b2;
 $linkedin: #0e76a8;
@@ -24,52 +37,88 @@ $youtube: #ff0000;
 $whatsapp: #25d366;
 
 // Colors
-$colors: "green" $mygreen $white, "lemongreen" $mylemongreen $dark, "darkblue" $darkgreen $white,
-  "yellow" $myyellow $black, "darkyellow" $darkyellow $white, "red" $myred $white, "purered" $purered $white,
-  "orange" $myorange $white, "oranger" $myoranger $white, "scarlet" $scarlet $white, "blue" $myblue $white,
-  "lightblue" $mylightblue $white, "pink" $mypink $white, "mydarkblue" $mydarkblue $white, "white" $white $black,
-  "black" $black $white, "gray" $gray $white "facebook" $facebook $white, "linkedin" $linkedin $white,
-  "youtube" $youtube $white, "whatsapp" $whatsapp $white;
+$colors: "green" $mygreen $white, "greenblue" $greenblue $white, "darkgreenblue" $darkgreenblue $white,
+  "nightblue" $nightblue $white, "lightgreen" $mylightgreen $dark, "greenleaf" $greenleaf $white,
+  "yellow" $myyellow $white, "gold" $gold $white, "lightyellow" $lightyellow $white, "red" $myred $white,
+  "purered" $purered $white, "orange" $myorange $white, "oranger" $myoranger $white, "brown" $brown $white,
+  "scarlet" $scarlet $white, "blue" $myblue $white, "lightblue" $mylightblue $white, "pink" $mypink $white,
+  "darkblue" $darkblue $white, "white" $white $black, "black" $black $white, "gray" $gray $white,
+  "darklight" $darklight $white, "darkhead" $darkhead $white, "darkfoot" $darkfoot $white, "border" $border $white,
+  "light" $light $black, "input" $input $white, "transparent" $transparent $black, "soft" $soft $black,
+  "facebook" $facebook $white, "linkedin" $linkedin $white, "youtube" $youtube $white, "whatsapp" $whatsapp $white;
 @each $name, $color, $font in $colors {
   .text-#{$name} {
     color: $color !important;
   }
 
-  .text-#{$name}-10 {
-    color: rgba($color, 0.1);
+  :root {
+    --#{$name}: #{$color};
   }
 
-  .text-#{$name}-20 {
-    color: rgba($color, 0.2);
+  .nav-link.text-#{$name}:not(.active) {
+    color: rgba($color, 0.5) !important;
+    transition: all 0.25s;
+  }
+
+  .nav-link.text-#{$name}:not(.active):hover {
+    color: $color !important;
+  }
+
+  .badge-#{$name} {
+    background-color: $color !important;
+    color: $font !important;
   }
 
   .bg-#{$name} {
     background-color: $color !important;
   }
 
-  .bg-#{$name}-10 {
-    background-color: rgba($color, 0.1) !important;
+  @for $i from 1 through 20 {
+    .bg-#{$name}-#{$i * 5} {
+      background-color: rgba($color, $i / 20) !important;
+    }
+
+    .border-#{$name}-#{$i * 5} {
+      border-color: rgba($color, $i / 20) !important;
+    }
+
+    .text-#{$name}-#{$i * 5} {
+      color: rgba($color, $i / 20);
+    }
+
+    :root {
+      --#{$name}-#{$i * 5}: #{rgba($color, $i / 20)};
+    }
   }
 
-  .bg-#{$name}-20 {
-    background-color: rgba($color, 0.2) !important;
+  .shadow-#{$name} {
+    box-shadow: 0 0.5rem 1rem rgba($color, 0.15) !important;
   }
 
-  .bg-#{$name}-33 {
-    background-color: rgba($color, 0.33) !important;
+  .shadow-#{$name}-lg {
+    box-shadow: 0 1rem 3rem rgba($color, 0.175) !important;
   }
 
-  .bg-#{$name}-50 {
-    background-color: rgba($color, 0.5) !important;
-  }
-
-  .bg-#{$name}-80 {
-    background-color: rgba($color, 0.8) !important;
+  .shadow-#{$name}-circle {
+    box-shadow: 0 0 0 0.75rem rgba($color, 0.1) !important;
   }
 
   .btn-#{$name} {
     background-color: $color;
-    color: $font !important;
+    border-color: $color;
+    color: $font;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      border-color: darken($color, 10%);
+      color: $font;
+    }
+
+    &:focus,
+    &.focus {
+      box-shadow: 0 0 0 0.2rem rgba($color, 0.5);
+    }
 
     &:hover,
     &:focus,
@@ -77,46 +126,98 @@ $colors: "green" $mygreen $white, "lemongreen" $mylemongreen $dark, "darkblue" $
       background-color: darken($color, 5%);
     }
 
-    &.disabled {
+    &.disabled,
+    &:disabled {
       background-color: rgba($color, 0.5);
     }
   }
 
-  .border-#{$name}-20 {
-    border-color: rgba($color, 0.2) !important;
-  }
+  .btn-outline-#{$name} {
+    border-color: $color;
+    color: $color;
 
-  .border-#{$name}-50 {
-    border-color: rgba($color, 0.5) !important;
+    &:hover {
+      background-color: $color;
+      color: $font;
+    }
+
+    &:focus,
+    &.focus {
+      box-shadow: 0 0 0 0.2rem rgba($color, 0.5);
+    }
+
+    &.disabled,
+    &:disabled {
+      background-color: transparent;
+      color: $color;
+    }
   }
 
   .border-#{$name} {
     border-color: $color !important;
   }
+
+  .scrollbar-#{$name} {
+    overflow: auto;
+    scrollbar-color: $color;
+    scrollbar-width: 3px;
+
+    &.scrollbar-thin {
+      scrollbar-width: 2px;
+    }
+
+    &.scrollbar-thick {
+      scrollbar-width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #f5f5f5;
+    }
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+      background-color: #f5f5f5;
+    }
+
+    &.scrollbar-thin::-webkit-scrollbar {
+      width: 3px;
+      height: 3px;
+    }
+
+    &.scrollbar-thick::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $color;
+      border-radius: 3px;
+    }
+
+    &.scrollbar-thin::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+    }
+  }
 }
 
-$gradients: "scarlet" $scarlet $myred 259deg, "orange" $myoranger $brown 253deg, "blue" $myblue $mydarkblue 210deg,
-  "dark" $black $dark 39deg;
+$gradients: "scarlet" $scarlet $myred 259deg, "orange" $myoranger $brown 253deg, "blue" $myblue $darkblue 210deg;
 @each $name, $primary, $secondary, $angle in $gradients {
   .bg-#{$name}-gradient {
     background-image: linear-gradient($angle, $primary 0%, $secondary 100%) !important;
   }
 }
 
-$radial-gradients: "green" $mygreen $darkgreen, "scarlet" $scarlet $myred;
+$radial-gradients: "green" $mygreen $greenleaf, "scarlet" $scarlet $myred;
 @each $name, $primary, $secondary in $radial-gradients {
   .bg-#{$name}-radial-gradient {
     background: transparent
-      radial-gradient(closest-side at 50% 50%, $primary 0%, $secondary 100%)
+      radial-gradient(circle at 50% 50%, $primary 0%, $secondary 100%)
       0%
       0%
       no-repeat
       padding-box;
   }
-}
-
-.bg-text {
-  -moz-background-clip: text;
-  -webkit-background-clip: text;
-  background-clip: text;
 }

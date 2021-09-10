@@ -1,0 +1,53 @@
+.Meal {
+    padding: 4px;
+    width: 100%;
+}
+
+.Meal .bg {
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transform: scale(1) rotate(0deg);
+    transition: all 0.25s;
+}
+
+.Meal:hover .bg {
+    transform: scale(1.21) rotate(10deg);
+}
+
+.Meal .actions {
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.25s;
+}
+
+.Meal .actions:hover {
+    opacity: 1;
+}
+
+@media (min-width: 1000px) {
+    .Meal {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .Meal {
+        width: 33.33%;
+    }
+}
+
+@media (min-width: 1600px) {
+    .Meal {
+        width: 25%;
+    }
+}
+
+@media (min-width: 1900px) {
+    .Meal {
+        width: 20%;
+    }
+}
