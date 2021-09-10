@@ -75,6 +75,7 @@ class Add extends Component {
     componentDidMount() {
         this.props.reset();
         if (this.props.edit) this.props.get(this.props.match.params.id);
+        else this.props.info();
     }
 
     componentDidUpdate(prevProps) {
