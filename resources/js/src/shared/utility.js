@@ -58,7 +58,7 @@ export const checkValidity = (value = '', rules) => {
 
 export const htmlEntities = str => {
     if ((str === null) || (str === ''))
-        return false;
+        return '';
     else
         str = str.toString();
 
