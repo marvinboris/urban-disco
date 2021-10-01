@@ -3,9 +3,7 @@ import { Collapse, Nav } from 'reactstrap';
 
 import NavigationItem from './NavigationItem/NavigationItem';
 
-const navigationItems = ({ isAuth, name, logoutHandler, role, cartItemsNumber, notifications }) => {
-    const [isOpen, setIsOpen] = useState(false);
-
+const navigationItems = ({ isAuth, isOpen, name, logoutHandler, role, cartItemsNumber, notifications }) => {
     return (
         <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto d-flex align-items-center" navbar>

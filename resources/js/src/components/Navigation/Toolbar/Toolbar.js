@@ -20,7 +20,7 @@ const toolbar = ({ isAuth, name, drawerToggleClicked, logoutHandler, role, cartI
 
                     <NavbarToggler onClick={toggle} />
 
-                    <NavigationItems isAuth={isAuth} name={name} logoutHandler={logoutHandler} notifications={notifications} cartItemsNumber={cartItemsNumber} role={role} />
+                    <NavigationItems isAuth={isAuth} isOpen={isOpen} name={name} logoutHandler={logoutHandler} notifications={notifications} cartItemsNumber={cartItemsNumber} role={role} />
                 </Navbar>
             </Container>
         </div>
