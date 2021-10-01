@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Col, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import { htmlEntities } from '../../../shared/utility';
 
 import './ArticleCard.css';
 
@@ -16,7 +17,7 @@ const articleCard = ({ photo, name, description, price = 0, link = '/', md = 6, 
                         : <NavLink className="bg-dark-gradient bg-text" to={link}>{name}</NavLink>}
                 </CardTitle>
 
-                <CardSubtitle className="text-muted text-truncate small mb-2">{description}</CardSubtitle>
+                <CardSubtitle className="text-muted text-truncate small mb-2">{htmlEntities(description).substr(0, 100)}</CardSubtitle>
 
                 <CardText className="bg-dark-gradient bg-text h6 text-600">{price} FCFA</CardText>
             </CardBody>
