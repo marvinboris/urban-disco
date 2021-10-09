@@ -980,84 +980,77 @@ var Global = /*#__PURE__*/function (_Component) {
             err: error
           })
         });
-        content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.Fragment, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_19__["default"], {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(_components_Backend_UI_Form_Form__WEBPACK_IMPORTED_MODULE_8__["default"], {
-              onSubmit: this.submitHandler,
-              icon: icon,
-              title: global,
-              link: "/admin/cms",
-              innerClassName: "row",
-              className: "shadow-sm",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_18__["default"], {
-                lg: 8,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Feedback_Feedback__WEBPACK_IMPORTED_MODULE_12__["default"], {
-                  message: message
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_19__["default"], {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("input", {
-                    type: "hidden",
-                    name: "_method",
-                    defaultValue: "PATCH"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Backend_UI_Input_Input__WEBPACK_IMPORTED_MODULE_9__["default"], {
-                    type: "text",
-                    className: "col-md-6",
-                    icon: "signature",
-                    onChange: this.inputChangeHandler,
-                    value: app_name,
-                    name: "app_name",
-                    required: true,
-                    placeholder: form.app_name
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Backend_UI_Input_Input__WEBPACK_IMPORTED_MODULE_9__["default"], {
-                    type: "text",
-                    className: "col-md-6",
-                    icon: "signature",
-                    onChange: this.inputChangeHandler,
-                    value: company_name,
-                    name: "company_name",
-                    required: true,
-                    placeholder: form.company_name
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("input", {
-                    type: "file",
-                    id: "logo",
-                    name: "logo",
-                    className: "d-none",
-                    onChange: this.inputChangeHandler,
-                    accept: ".png,.jpg,.jpeg"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
-                    className: "col-12",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_UI_Button_BetweenButton_BetweenButton__WEBPACK_IMPORTED_MODULE_10__["default"], {
-                      color: "green",
-                      icon: "save",
-                      children: save
-                    })
-                  })]
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_18__["default"], {
-                lg: 4,
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
-                  className: "embed-responsive embed-responsive-1by1 bg-soft border border-light d-flex justify-content-center align-items-center w-60 mx-auto",
-                  style: {
-                    cursor: 'pointer',
-                    background: logo && "url(\"".concat(logo, "\") no-repeat center"),
-                    backgroundSize: 'contain'
-                  },
-                  onClick: this.fileUpload,
-                  children: logo && logo !== cms.global.logo && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
-                    className: "text-center text-green",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_15__.FontAwesomeIcon, {
-                        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_20__.faCheckCircle,
-                        fixedWidth: true,
-                        size: "5x"
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
-                      className: "mt-3",
-                      children: selected_file
-                    })]
+        content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_18__["default"], {
+          lg: 9,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_19__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_18__["default"], {
+              lg: 8,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Feedback_Feedback__WEBPACK_IMPORTED_MODULE_12__["default"], {
+                message: message
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_19__["default"], {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("input", {
+                  type: "hidden",
+                  name: "_method",
+                  defaultValue: "PATCH"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Backend_UI_Input_Input__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                  type: "text",
+                  className: "col-md-6",
+                  icon: "signature",
+                  onChange: this.inputChangeHandler,
+                  value: app_name,
+                  name: "app_name",
+                  required: true,
+                  placeholder: form.app_name
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Backend_UI_Input_Input__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                  type: "text",
+                  className: "col-md-6",
+                  icon: "signature",
+                  onChange: this.inputChangeHandler,
+                  value: company_name,
+                  name: "company_name",
+                  required: true,
+                  placeholder: form.company_name
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("input", {
+                  type: "file",
+                  id: "logo",
+                  name: "logo",
+                  className: "d-none",
+                  onChange: this.inputChangeHandler,
+                  accept: ".png,.jpg,.jpeg"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
+                  className: "col-12",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_UI_Button_BetweenButton_BetweenButton__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                    color: "green",
+                    icon: "save",
+                    children: save
                   })
-                })
+                })]
               })]
-            })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_18__["default"], {
+              lg: 4,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
+                className: "embed-responsive embed-responsive-1by1 bg-soft border border-light d-flex justify-content-center align-items-center w-60 mx-auto",
+                style: {
+                  cursor: 'pointer',
+                  background: logo && "url(\"".concat(logo, "\") no-repeat center"),
+                  backgroundSize: 'contain'
+                },
+                onClick: this.fileUpload,
+                children: logo && logo !== cms.global.logo && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
+                  className: "text-center text-green",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_15__.FontAwesomeIcon, {
+                      icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_20__.faCheckCircle,
+                      fixedWidth: true,
+                      size: "5x"
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)("div", {
+                    className: "mt-3",
+                    children: selected_file
+                  })]
+                })
+              })
+            })]
           })
         });
       }
@@ -1073,7 +1066,14 @@ var Global = /*#__PURE__*/function (_Component) {
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)("div", {
           className: "p-4 pb-0",
-          children: [redirect, errors, content]
+          children: [redirect, errors, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_Backend_UI_Form_Form__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            onSubmit: this.submitHandler,
+            icon: icon,
+            title: global,
+            link: "/admin/cms",
+            innerClassName: "row justify-content-center",
+            children: content
+          })]
         })]
       });
     }
