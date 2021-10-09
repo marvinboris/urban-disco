@@ -342,23 +342,29 @@ __webpack_require__.r(__webpack_exports__);
     "updated": "Method successfully updated.",
     "deleted": "Method successfully deleted."
   },
-  "enrolments": {
-    "not_found": "Enrolment not found.",
-    "created": "Enrolment successfully created.",
-    "updated": "Enrolment successfully updated.",
-    "deleted": "Enrolment successfully deleted."
+  "post_categories": {
+    "not_found": "Post category not found.",
+    "created": "Post category succesfully created.",
+    "updated": "Post category successfully updated.",
+    "deleted": "Post category successfully deleted."
   },
-  "payments": {
-    "not_found": "Payment not found.",
-    "created": "Payment successfully created.",
-    "updated": "Payment successfully updated.",
-    "deleted": "Payment successfully deleted."
+  "posts": {
+    "not_found": "Post not found.",
+    "created": "Post succesfully created.",
+    "updated": "Post successfully updated.",
+    "deleted": "Post successfully deleted."
   },
-  "courses": {
-    "not_found": "Course not found.",
-    "created": "Course successfully created.",
-    "updated": "Course successfully updated.",
-    "deleted": "Course successfully deleted."
+  "brands": {
+    "not_found": "Brand not found.",
+    "created": "Brand succesfully created.",
+    "updated": "Brand successfully updated.",
+    "deleted": "Brand successfully deleted."
+  },
+  "products": {
+    "not_found": "Product not found.",
+    "created": "Product succesfully created.",
+    "updated": "Product successfully updated.",
+    "deleted": "Product successfully deleted."
   }
 });
 
@@ -558,18 +564,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Col.js");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/FormGroup.js");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Label.js");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Input.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/NavItem.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/NavLink.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/TabPane.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Row.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Nav.js");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/TabContent.js");
-/* harmony import */ var _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @fortawesome/free-regular-svg-icons */ "./node_modules/@fortawesome/free-regular-svg-icons/index.es.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/Row.js");
 /* harmony import */ var _components_Backend_UI_Breadcrumb_Breadcrumb__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../components/Backend/UI/Breadcrumb/Breadcrumb */ "./resources/js/src/components/Backend/UI/Breadcrumb/Breadcrumb.js");
 /* harmony import */ var _components_UI_Titles_SpecialTitle_SpecialTitle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../components/UI/Titles/SpecialTitle/SpecialTitle */ "./resources/js/src/components/UI/Titles/SpecialTitle/SpecialTitle.js");
 /* harmony import */ var _components_UI_Titles_Subtitle_Subtitle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../components/UI/Titles/Subtitle/Subtitle */ "./resources/js/src/components/UI/Titles/Subtitle/Subtitle.js");
@@ -640,7 +640,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
  // Components
 
 
@@ -668,7 +667,7 @@ var Separator = function Separator(_ref) {
   });
 };
 
-var SubNavLinks = function SubNavLinks(_ref2) {
+var Languages = function Languages(_ref2) {
   var messages = _ref2.messages,
       language = _ref2.language;
 
@@ -682,8 +681,9 @@ var SubNavLinks = function SubNavLinks(_ref2) {
       value = _useState4[0],
       setValue = _useState4[1];
 
-  var toggle = function toggle(tab) {
-    if (activeTab !== tab) setActiveTab(tab);
+  var inputChangeHandler = function inputChangeHandler(e) {
+    var value = e.target.value;
+    if (value !== activeTab) setActiveTab(value);
   };
 
   var _onChange = function onChange(e) {
@@ -739,14 +739,14 @@ var SubNavLinks = function SubNavLinks(_ref2) {
         return new RegExp(el.regex.replace(/\[/g, '\\[').replace(/\]/g, '\\]')).test(mainName);
       });
       append = !findAppend ? null : findAppend.action(mainItem);
-      return typeof mainItem === 'string' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.Fragment, {
+      return typeof mainItem === 'string' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
         children: [prepend, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_17__["default"], {
           className: "col-md-6 col-lg-4 align-self-end",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_18__["default"], {
             className: "text-small text-500",
             children: mainItem
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_19__["default"], {
-            type: "text",
+            type: "textarea",
             name: mainName,
             id: mainId,
             placeholder: mainItem,
@@ -756,23 +756,18 @@ var SubNavLinks = function SubNavLinks(_ref2) {
             value: mainValue
           })]
         }), append]
-      }) : recursiveDeepness(mainItem, mainName, mainValue, mainDeepness, paramPrepends, paramAppends);
+      }, language.abbr + '-' + mainId) : recursiveDeepness(mainItem, mainName, mainValue, mainDeepness, paramPrepends, paramAppends);
     });
   };
 
-  var navItems = Object.keys(messages).map(function (key) {
+  var options = Object.keys(messages).sort(function (a, b) {
+    return a.localeCompare(b);
+  }).map(function (key) {
     var id = "".concat(language.abbr, "-").concat(key);
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_20__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_21__["default"], {
-        className: activeTab === id ? 'active' : "",
-        onClick: function onClick() {
-          return toggle(id);
-        },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
-          className: "text-capitalize",
-          children: key.split('_').join(' ')
-        })
-      })
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("option", {
+      className: "text-capitalize",
+      value: id,
+      children: key.split('_').join(' ')
     }, id);
   });
   var prefix = "".concat(language.abbr, "[messages]");
@@ -812,30 +807,33 @@ var SubNavLinks = function SubNavLinks(_ref2) {
     var currentValue = value[item];
     var currentDeepness = [item];
     var current = recursiveDeepness(currentItem, currentName, currentValue, currentDeepness);
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_22__["default"], {
-      tabId: "".concat(language.abbr, "-").concat(item),
-      className: "pt-4",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_23__["default"], {
-        children: current
-      })
-    }, Math.random() + currentName);
+    var id = language.abbr + "-" + item;
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_20__["default"], {
+      className: "pt-4 ".concat(activeTab === id ? "" : "d-none"),
+      children: current
+    }, language.abbr + '-' + currentName);
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_24__["default"], {
-      tabs: true,
-      pills: true,
-      children: navItems
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_25__["default"], {
-      activeTab: activeTab,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_22__["default"], {
-        tabId: "".concat(language.abbr, "-auth"),
-        className: "pt-4",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_23__["default"], {
-          children: auth
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_20__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+      className: "col-md-6 col-xl-4 col-xxl-3",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_17__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_19__["default"], {
+          type: "select",
+          name: "tab",
+          onChange: inputChangeHandler,
+          className: "text-capitalize",
+          value: activeTab,
+          children: options
         })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+      className: "col-12",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_20__["default"], {
+        className: "pt-4 ".concat(activeTab === language.abbr + '-auth' ? "" : "d-none"),
+        children: auth
       }), resourceTabPanes]
     })]
-  }, Math.random() * Math.random());
+  }, 'Languages-' + language.abbr);
 };
 
 var Messages = /*#__PURE__*/function (_Component) {
@@ -855,7 +853,7 @@ var Messages = /*#__PURE__*/function (_Component) {
     _this = _super.call.apply(_super, [this].concat(args));
 
     _defineProperty(_assertThisInitialized(_this), "state", {
-      activeTab: "fr"
+      abbr: "fr"
     });
 
     _defineProperty(_assertThisInitialized(_this), "submitHandler", /*#__PURE__*/function () {
@@ -888,16 +886,6 @@ var Messages = /*#__PURE__*/function (_Component) {
           files = _e$target.files;
 
       _this.setState(_defineProperty({}, name, files ? files[0] : value));
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "fileUpload", function () {
-      return document.getElementById('logo').click();
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "toggle", function (tab) {
-      if (_this.state.activeTab !== tab) _this.setState({
-        activeTab: tab
-      });
     });
 
     return _this;
@@ -936,8 +924,6 @@ var Messages = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       var _this$props = this.props,
           _this$props$content$c = _this$props.content.cms.pages,
           save = _this$props$content$c.components.form.save,
@@ -951,14 +937,14 @@ var Messages = /*#__PURE__*/function (_Component) {
           cms = _this$props$backend$c.cms,
           languages = _this$props$backend$c.languages,
           features = _this$props.auth.data.role.features;
-      var activeTab = this.state.activeTab;
+      var abbr = this.state.abbr;
       var content = null;
       var errors = null;
       var feature = features.find(function (f) {
         return f.prefix === 'cms';
       });
 
-      var redirect = !(feature && JSON.parse(feature.permissions).includes('u')) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_26__.Redirect, {
+      var redirect = !(feature && JSON.parse(feature.permissions).includes('u')) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_21__.Redirect, {
         to: "/user/dashboard"
       });
 
@@ -972,70 +958,53 @@ var Messages = /*#__PURE__*/function (_Component) {
           })
         });
         if (!languages) languages = [];
-        var nav = languages.map(function (language) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_20__["default"], {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_21__["default"], {
-              className: activeTab === language.abbr ? 'active' : '',
-              onClick: function onClick() {
-                return _this2.toggle(language.abbr);
-              },
-              children: language.name
-            })
-          }, Math.random());
+        var languagesOptions = languages.map(function (language) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("option", {
+            value: language.abbr,
+            children: language.name
+          }, Math.random() + JSON.stringify(language));
         });
-        var tabContent = languages.map(function (language) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_22__["default"], {
-            tabId: language.abbr,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(SubNavLinks, {
+        var mainContent = languages.map(function (language) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+            className: language.abbr === abbr ? "" : "d-none",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(Languages, {
               messages: cms.pages[language.abbr].messages,
               language: language
             })
           }, Math.random());
         });
-        content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.Fragment, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_23__["default"], {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_components_Backend_UI_Form_Form__WEBPACK_IMPORTED_MODULE_8__["default"], {
-              onSubmit: this.submitHandler,
-              icon: icon,
-              title: messages,
-              link: "/admin/cms",
-              innerClassName: "row",
-              className: "shadow-sm",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_16__["default"], {
-                lg: 12,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_components_Feedback_Feedback__WEBPACK_IMPORTED_MODULE_11__["default"], {
-                  message: message
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_23__["default"], {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("input", {
-                    type: "hidden",
-                    name: "_method",
-                    defaultValue: "PATCH"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_16__["default"], {
-                    lg: 2,
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_24__["default"], {
-                      tabs: true,
-                      vertical: true,
-                      pills: true,
-                      children: nav
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_16__["default"], {
-                    lg: 10,
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_25__["default"], {
-                      activeTab: activeTab,
-                      children: tabContent
-                    })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
-                    className: "col-12",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_components_UI_Button_BetweenButton_BetweenButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
-                      color: "green",
-                      icon: _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_27__.faSave,
-                      children: save
-                    })
-                  })]
-                })]
+        content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_16__["default"], {
+          lg: 9,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_components_Feedback_Feedback__WEBPACK_IMPORTED_MODULE_11__["default"], {
+            message: message
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_20__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("input", {
+              type: "hidden",
+              name: "_method",
+              defaultValue: "PATCH"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+              className: "col-md-6 col-xl-4 col-xxl-3",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_17__["default"], {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_19__["default"], {
+                  type: "select",
+                  name: "abbr",
+                  onChange: this.inputChangeHandler,
+                  value: abbr,
+                  children: languagesOptions
+                })
               })
-            })
-          })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+              className: "col-12",
+              children: mainContent
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+              className: "col-12",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_components_UI_Button_BetweenButton_BetweenButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                color: "green",
+                icon: "save",
+                children: save
+              })
+            })]
+          })]
         });
       }
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.Fragment, {
@@ -1050,7 +1019,16 @@ var Messages = /*#__PURE__*/function (_Component) {
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
           className: "p-4 pb-0",
-          children: [redirect, errors, content]
+          children: [redirect, errors, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_20__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_components_Backend_UI_Form_Form__WEBPACK_IMPORTED_MODULE_8__["default"], {
+              onSubmit: this.submitHandler,
+              icon: icon,
+              title: messages,
+              link: "/admin/cms",
+              innerClassName: "row justify-content-center",
+              children: content
+            })
+          })]
         })]
       });
     }
@@ -1087,7 +1065,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_26__.withRouter)((0,react_redux__WEBPACK_IMPORTED_MODULE_2__.connect)(mapStateToProps, mapDispatchToProps)(Messages)));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_21__.withRouter)((0,react_redux__WEBPACK_IMPORTED_MODULE_2__.connect)(mapStateToProps, mapDispatchToProps)(Messages)));
 
 /***/ }),
 
@@ -1676,274 +1654,6 @@ var Label = function Label(props) {
 Label.propTypes = propTypes;
 Label.defaultProps = defaultProps;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Label);
-
-/***/ }),
-
-/***/ "./node_modules/reactstrap/es/NavLink.js":
-/*!***********************************************!*\
-  !*** ./node_modules/reactstrap/es/NavLink.js ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
-/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./utils */ "./node_modules/reactstrap/es/utils.js");
-
-
-
-
-
-
-
-
-var propTypes = {
-  tag: _utils__WEBPACK_IMPORTED_MODULE_7__.tagPropType,
-  innerRef: prop_types__WEBPACK_IMPORTED_MODULE_5___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_5___default().object), (prop_types__WEBPACK_IMPORTED_MODULE_5___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_5___default().string)]),
-  disabled: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().bool),
-  active: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().bool),
-  className: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().string),
-  cssModule: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().object),
-  onClick: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().func),
-  href: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().any)
-};
-var defaultProps = {
-  tag: 'a'
-};
-
-var NavLink = /*#__PURE__*/function (_React$Component) {
-  (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_3__["default"])(NavLink, _React$Component);
-
-  function NavLink(props) {
-    var _this;
-
-    _this = _React$Component.call(this, props) || this;
-    _this.onClick = _this.onClick.bind((0,_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
-    return _this;
-  }
-
-  var _proto = NavLink.prototype;
-
-  _proto.onClick = function onClick(e) {
-    if (this.props.disabled) {
-      e.preventDefault();
-      return;
-    }
-
-    if (this.props.href === '#') {
-      e.preventDefault();
-    }
-
-    if (this.props.onClick) {
-      this.props.onClick(e);
-    }
-  };
-
-  _proto.render = function render() {
-    var _this$props = this.props,
-        className = _this$props.className,
-        cssModule = _this$props.cssModule,
-        active = _this$props.active,
-        Tag = _this$props.tag,
-        innerRef = _this$props.innerRef,
-        attributes = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_this$props, ["className", "cssModule", "active", "tag", "innerRef"]);
-
-    var classes = (0,_utils__WEBPACK_IMPORTED_MODULE_7__.mapToCssModules)(classnames__WEBPACK_IMPORTED_MODULE_6___default()(className, 'nav-link', {
-      disabled: attributes.disabled,
-      active: active
-    }), cssModule);
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.createElement(Tag, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, attributes, {
-      ref: innerRef,
-      onClick: this.onClick,
-      className: classes
-    }));
-  };
-
-  return NavLink;
-}(react__WEBPACK_IMPORTED_MODULE_4__.Component);
-
-NavLink.propTypes = propTypes;
-NavLink.defaultProps = defaultProps;
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NavLink);
-
-/***/ }),
-
-/***/ "./node_modules/reactstrap/es/TabContent.js":
-/*!**************************************************!*\
-  !*** ./node_modules/reactstrap/es/TabContent.js ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _TabContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./TabContext */ "./node_modules/reactstrap/es/TabContext.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils */ "./node_modules/reactstrap/es/utils.js");
-
-
-
-
-
-
-
-var propTypes = {
-  tag: _utils__WEBPACK_IMPORTED_MODULE_5__.tagPropType,
-  activeTab: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().any),
-  className: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string),
-  cssModule: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().object)
-};
-var defaultProps = {
-  tag: 'div'
-};
-
-var TabContent = /*#__PURE__*/function (_Component) {
-  (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(TabContent, _Component);
-
-  TabContent.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    if (prevState.activeTab !== nextProps.activeTab) {
-      return {
-        activeTab: nextProps.activeTab
-      };
-    }
-
-    return null;
-  };
-
-  function TabContent(props) {
-    var _this;
-
-    _this = _Component.call(this, props) || this;
-    _this.state = {
-      activeTab: _this.props.activeTab
-    };
-    return _this;
-  }
-
-  var _proto = TabContent.prototype;
-
-  _proto.render = function render() {
-    var _this$props = this.props,
-        className = _this$props.className,
-        cssModule = _this$props.cssModule,
-        Tag = _this$props.tag;
-    var attributes = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.omit)(this.props, Object.keys(propTypes));
-    var classes = (0,_utils__WEBPACK_IMPORTED_MODULE_5__.mapToCssModules)(classnames__WEBPACK_IMPORTED_MODULE_4___default()('tab-content', className), cssModule);
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(_TabContext__WEBPACK_IMPORTED_MODULE_6__.TabContext.Provider, {
-      value: {
-        activeTabId: this.state.activeTab
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(Tag, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, attributes, {
-      className: classes
-    })));
-  };
-
-  return TabContent;
-}(react__WEBPACK_IMPORTED_MODULE_2__.Component);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TabContent);
-TabContent.propTypes = propTypes;
-TabContent.defaultProps = defaultProps;
-
-/***/ }),
-
-/***/ "./node_modules/reactstrap/es/TabContext.js":
-/*!**************************************************!*\
-  !*** ./node_modules/reactstrap/es/TabContext.js ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "TabContext": () => (/* binding */ TabContext)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-/**
- * TabContext
- * {
- *  activeTabId: PropTypes.any
- * }
- */
-
-var TabContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext({});
-
-/***/ }),
-
-/***/ "./node_modules/reactstrap/es/TabPane.js":
-/*!***********************************************!*\
-  !*** ./node_modules/reactstrap/es/TabPane.js ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ TabPane)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _TabContext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./TabContext */ "./node_modules/reactstrap/es/TabContext.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils */ "./node_modules/reactstrap/es/utils.js");
-
-
-
-
-
-
-
-var propTypes = {
-  tag: _utils__WEBPACK_IMPORTED_MODULE_5__.tagPropType,
-  className: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string),
-  cssModule: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().object),
-  tabId: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().any)
-};
-var defaultProps = {
-  tag: 'div'
-};
-function TabPane(props) {
-  var className = props.className,
-      cssModule = props.cssModule,
-      tabId = props.tabId,
-      Tag = props.tag,
-      attributes = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(props, ["className", "cssModule", "tabId", "tag"]);
-
-  var getClasses = function getClasses(activeTabId) {
-    return (0,_utils__WEBPACK_IMPORTED_MODULE_5__.mapToCssModules)(classnames__WEBPACK_IMPORTED_MODULE_4___default()('tab-pane', className, {
-      active: tabId === activeTabId
-    }), cssModule);
-  };
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(_TabContext__WEBPACK_IMPORTED_MODULE_6__.TabContext.Consumer, null, function (_ref) {
-    var activeTabId = _ref.activeTabId;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(Tag, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, attributes, {
-      className: getClasses(activeTabId)
-    }));
-  });
-}
-TabPane.propTypes = propTypes;
-TabPane.defaultProps = defaultProps;
 
 /***/ }),
 

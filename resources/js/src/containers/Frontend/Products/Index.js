@@ -19,6 +19,11 @@ class Products extends Component {
 
     render() {
         const {
+            content: {
+                cms: {
+                    pages: { frontend: { pages: { products: { banner, form } } } }
+                }
+            },
             frontend: { products: { loading, message, error, products = [], brands = [] } }
         } = this.props;
         let content;
@@ -36,10 +41,10 @@ class Products extends Component {
             <Col lg={9}>
                 <Form inline className="mb-5">
                     <Input type="search" className="mb-2 mr-sm-2" id="search" />
-                    <Button type="submit" className="mb-2 mr-sm-2" color="dark">Go</Button>
-                    <Button type="reset" className="mb-2 mr-sm-2" color="light">Reset</Button>
+                    <Button type="submit" className="mb-2 mr-sm-2" color="dark">{form.go}</Button>
+                    <Button type="reset" className="mb-2 mr-sm-2" color="light">{form.reset}</Button>
                     <Input type="select" className="mb-2" name="sort" id="sort">
-                        <option>Sort Product by</option>
+                        <option>{form.sort_product_by}</option>
                     </Input>
                 </Form>
 
@@ -50,12 +55,12 @@ class Products extends Component {
 
             <Col>
                 <div className="mb-4">
-                    <h3>Filter by Price</h3>
+                    <h3>{form.filter_by_price}</h3>
                     <CustomInput id="range" type="range" min={0} max={1000} />
                 </div>
 
                 <div className="mb-4">
-                    <h3>Filter by Brands</h3>
+                    <h3>{form.filter_by_brands}</h3>
                     <FormGroup>
                         {brands.map(brand => <CustomInput key={JSON.stringify(brand)} type="switch" id={brand.id} name="brands[]" label={brand.name} />)}
                     </FormGroup>
@@ -64,7 +69,7 @@ class Products extends Component {
         </Row>;
 
         return <Col xs={12} className="Products p-0">
-            <Banner title="Products" />
+            <Banner title={banner.title} />
 
             <PresentationalContainer>
                 <div className="py-5">

@@ -1,8 +1,7 @@
 import React, { Component, useState } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 import { Col, FormGroup, Input, Row } from 'reactstrap';
-import { faSave } from '@fortawesome/free-regular-svg-icons';
 
 // General
 import Breadcrumb from '../../../../components/Backend/UI/Breadcrumb/Breadcrumb';
@@ -167,7 +166,7 @@ class General extends Component {
                             <Col lg={12}>{mainContent}</Col>
 
                             <div className="col-12">
-                                <FormButton color="green" icon={faSave}>{save}</FormButton>
+                                <FormButton color="green" icon="save">{save}</FormButton>
                             </div>
                         </Row>
                     </Col>

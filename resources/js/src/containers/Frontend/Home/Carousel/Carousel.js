@@ -6,44 +6,19 @@ import {
     CarouselIndicators
 } from 'reactstrap';
 
-import FirstImage from '../../../../assets/images/Layer_4_copy.png';
-import SecondImage from '../../../../assets/images/482f2140-4473-42e8-85d2-0953eaf84d88.png';
-import ThirdImage from '../../../../assets/images/onlinestudents.png';
-import FourthImage from '../../../../assets/images/business-bg-3.png';
-import BlurImage from '../../../../assets/images/SRTP-abstract-background-19.png';
-
-const items = [
-    {
-        src: FirstImage,
-        altText: 'Slide 1',
-    },
-    {
-        src: SecondImage,
-        altText: 'Slide 2',
-    },
-    {
-        src: ThirdImage,
-        altText: 'Slide 3',
-    },
-    {
-        src: FourthImage,
-        altText: 'Slide 4',
-    }
-];
-
-const homeCarousel = (props) => {
+export default (props) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
 
     const next = () => {
         if (animating) return;
-        const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+        const nextIndex = activeIndex === props.items.length - 1 ? 0 : activeIndex + 1;
         setActiveIndex(nextIndex);
     }
 
     const previous = () => {
         if (animating) return;
-        const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+        const nextIndex = activeIndex === 0 ? props.items.length - 1 : activeIndex - 1;
         setActiveIndex(nextIndex);
     }
 
@@ -52,7 +27,7 @@ const homeCarousel = (props) => {
         setActiveIndex(newIndex);
     }
 
-    const slides = items.map((item) => {
+    const slides = props.items.map((item) => {
         return (
             <CarouselItem
                 onExiting={() => setAnimating(true)}
@@ -75,7 +50,7 @@ const homeCarousel = (props) => {
             previous={previous}
             className="h-100 carousel-fade"
         >
-            <CarouselIndicators items={items} activeIndex={activeIndex} className="d-flex flex-column align-items-center" onClickHandler={goToIndex} />
+            <CarouselIndicators items={props.items} activeIndex={activeIndex} className="d-flex flex-column align-items-center" onClickHandler={goToIndex} />
             {slides}
             <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} className="btn btn-dark" />
             <CarouselControl direction="next" directionText="Next" onClickHandler={next} className="btn btn-black rounded-right-0" />
@@ -83,5 +58,3 @@ const homeCarousel = (props) => {
         </Carousel>
     );
 }
-
-export default homeCarousel;

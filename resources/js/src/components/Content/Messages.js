@@ -63,22 +63,28 @@ export default {
         "updated": "Method successfully updated.",
         "deleted": "Method successfully deleted."
     },
-    "enrolments": {
-        "not_found": "Enrolment not found.",
-        "created": "Enrolment successfully created.",
-        "updated": "Enrolment successfully updated.",
-        "deleted": "Enrolment successfully deleted."
+    "post_categories": {
+        "not_found": "Post category not found.",
+        "created": "Post category succesfully created.",
+        "updated": "Post category successfully updated.",
+        "deleted": "Post category successfully deleted."
     },
-    "payments": {
-        "not_found": "Payment not found.",
-        "created": "Payment successfully created.",
-        "updated": "Payment successfully updated.",
-        "deleted": "Payment successfully deleted."
+    "posts": {
+        "not_found": "Post not found.",
+        "created": "Post succesfully created.",
+        "updated": "Post successfully updated.",
+        "deleted": "Post successfully deleted."
     },
-    "courses": {
-        "not_found": "Course not found.",
-        "created": "Course successfully created.",
-        "updated": "Course successfully updated.",
-        "deleted": "Course successfully deleted."
+    "brands": {
+        "not_found": "Brand not found.",
+        "created": "Brand succesfully created.",
+        "updated": "Brand successfully updated.",
+        "deleted": "Brand successfully deleted."
+    },
+    "products": {
+        "not_found": "Product not found.",
+        "created": "Product succesfully created.",
+        "updated": "Product successfully updated.",
+        "deleted": "Product successfully deleted."
     }
 };

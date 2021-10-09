@@ -564,14 +564,25 @@ __webpack_require__.r(__webpack_exports__);
         "add": "Add method",
         "index": "Method list"
       },
-      "enrolments": {
-        "title": "Enrolments"
+      "post_categories": {
+        "title": "Post categories",
+        "add": "Add post category",
+        "index": "Post category list"
       },
-      "payments": {
-        "title": "Payments report"
+      "posts": {
+        "title": "Posts",
+        "add": "Add post",
+        "index": "Post list"
       },
-      "courses": {
-        "title": "Courses"
+      "brands": {
+        "title": "Brands",
+        "add": "Add brand",
+        "index": "Brand list"
+      },
+      "products": {
+        "title": "Products",
+        "add": "Add product",
+        "index": "Product list"
       }
     }
   },
@@ -716,65 +727,60 @@ __webpack_require__.r(__webpack_exports__);
         "created_at": "Created at"
       }
     },
-    "enrolments": {
-      "title": "Enrolments",
-      "subtitle": "Please follow the instructions carefully",
-      "instructions": "Please fill the form below, All fields are required",
-      "create": "Create enrolment",
-      "edit": "Edit enrolment",
-      "index": "Enrolment list",
+    "post_categories": {
+      "title": "Post Categories",
+      "add": "Add post category",
+      "edit": "Edit post category",
+      "index": "Post category list",
       "form": {
-        "ref": "User reference",
-        "course": "Course",
-        "select_course": "Select course",
-        "background": "Educational background",
-        "name": "Full name",
-        "region": "Region",
-        "country": "Country",
-        "phone": "Phone",
-        "email": "E-mail address",
-        "address": "Address",
-        "nid": "Certified NID copy",
-        "diploma": "Certified diploma copy",
-        "photo": "Photo 4x4",
-        "cv": "CV",
+        "name": "Post category's name",
+        "slug": "Slug",
+        "is_active": "Status",
         "created_at": "Created at"
       }
     },
-    "payments": {
-      "title": "Payments report",
-      "subtitle": "Please follow the instructions carefully",
-      "index": "Payments report",
+    "posts": {
+      "title": "Posts",
+      "add": "Add post",
+      "edit": "Edit post",
+      "index": "Post list",
       "form": {
-        "enrolment": "Enrolment",
-        "method": "Payment method",
-        "amount": "Paid amount",
-        "status": "Status",
-        "comments": "Comments"
+        "title": "Post's Title",
+        "body": "Post's Body",
+        "photo": "Post's Photo",
+        "post_category": "Post Category",
+        "select_status": "Select status",
+        "is_active": "Status",
+        "slug": "Slug",
+        "select_post_category": "Select post category",
+        "created_at": "Created at"
       }
     },
-    "courses": {
-      "title": "Courses",
-      "subtitle": "Please follow the instructions carefully",
-      "instructions": "Please fill the form below, All fields are required",
-      "create": "Create course",
-      "edit": "Edit course",
-      "index": "Course list",
+    "brands": {
+      "title": "Brands",
+      "add": "Add brand",
+      "edit": "Edit brand",
+      "index": "Brand list",
       "form": {
-        "name": "Course name",
-        "description": "Course description",
-        "photo": "Photo",
-        "course_photo": "Course photo",
-        "requirements": "Requirements",
-        "training": "Training duration (in days)",
-        "internship": "Internship duration (in days)",
-        "prizes": "Prizes",
-        "country": "Country",
-        "color": "Color",
-        "select_color": "Select color",
-        "fees": "Registration fees",
-        "level": "Difficulty",
-        "select_level": "Select difficulty level",
+        "name": "Brand's name",
+        "created_at": "Created at"
+      }
+    },
+    "products": {
+      "title": "Products",
+      "add": "Add product",
+      "edit": "Edit product",
+      "index": "Product list",
+      "form": {
+        "name": "Product's Name",
+        "description": "Product's Description",
+        "photo": "Product's Photo",
+        "price": "Product's Price",
+        "brand": "Brand",
+        "select_status": "Select status",
+        "is_active": "Status",
+        "slug": "Slug",
+        "select_brand": "Select brand",
         "created_at": "Created at"
       }
     }
@@ -24183,7 +24189,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react_popper__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-popper */ "./node_modules/react-popper/lib/esm/Popper.js");
+/* harmony import */ var react_popper__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-popper */ "./node_modules/reactstrap/node_modules/react-popper/lib/esm/Popper.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils */ "./node_modules/reactstrap/es/utils.js");
 /* harmony import */ var _Fade__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Fade */ "./node_modules/reactstrap/es/Fade.js");
 

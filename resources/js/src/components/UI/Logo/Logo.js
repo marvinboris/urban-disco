@@ -1,15 +1,25 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-
-import Image from '../../../assets/images/20200217_014932-removebg-preview.png';
-import Black from '../../../assets/images/20200217_014932-removebg-preview-black.png';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import './Logo.css';
 
-const logo = ({ big, dark }) => (
-    <div className="Logo mb-0 text-white" >
-        <img src={!dark ? Image : Black} style={big ? { height: 120 } : { height: 80 }} />
-    </div>
-);
+class Logo extends Component {
+    render() {
+        const {
+            content: {
+                cms: {
+                    global: { logo }
+                }
+            },
+            big, dark
+        } = this.props;
 
-export default logo;
+        return <div className="Logo mb-0 text-white" >
+            <img src={!dark ? logo.light : logo.dark} style={big ? { height: 120 } : { height: 80 }} />
+        </div>;
+    }
+}
+
+const mapStateToProps = state => ({ ...state });
+
+export default connect(mapStateToProps)(Logo);

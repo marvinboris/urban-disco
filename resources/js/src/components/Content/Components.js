@@ -28,11 +28,10 @@ export default {
             "plural": "entries"
         }
     },
-    "course": {
-        "duration": "Duration",
-        "enroled": "Enroled",
-        "internship": "Internship",
-        "difficulty": "Difficulty",
-        "days": "days"
+    "post": {
+        "read_more": "Read more"
+    },
+    "product": {
+        "fcfa": "FCFA"
     }
 };

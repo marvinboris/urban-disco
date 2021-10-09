@@ -25,13 +25,14 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
         Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
         Route::middleware('permission')->group(function () {
-            Route::name('cms.')->prefix('cms')->group(function () {
-                Route::patch('global', 'CmsController@global')->name('global');
-                Route::patch('general', 'CmsController@general')->name('general');
-                Route::patch('components', 'CmsController@components')->name('components');
-                Route::patch('frontend', 'CmsController@frontend')->name('frontend');
-                Route::patch('backend', 'CmsController@backend')->name('backend');
-                Route::patch('auth', 'CmsController@auth')->name('auth');
+            Route::name('cms.')->prefix('cms')->namespace('CMS')->group(function () {
+                Route::patch('global', 'GlobalController@patch')->name('global');
+                Route::patch('general', 'GeneralController@patch')->name('general');
+                Route::patch('components', 'ComponentsController@patch')->name('components');
+                Route::patch('messages', 'MessagesController@patch')->name('messages');
+                Route::patch('frontend', 'FrontendController@patch')->name('frontend');
+                Route::patch('backend', 'BackendController@patch')->name('backend');
+                Route::patch('auth', 'AuthController@patch')->name('auth');
 
                 Route::name('index')->get('', function () {
                     $jsonString = file_get_contents(base_path('cms.json'));

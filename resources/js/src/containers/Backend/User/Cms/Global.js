@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Redirect, withRouter } from 'react-router-dom';
 import { Col, Row } from 'reactstrap';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
-import { faSave } from '@fortawesome/free-regular-svg-icons';
 
 // Components
 import Breadcrumb from '../../../../components/Backend/UI/Breadcrumb/Breadcrumb';
@@ -84,36 +83,34 @@ class Global extends Component {
                 <Error err={error} />
             </>;
             content = (
-                <>
+                <Col lg={9}>
                     <Row>
-                        <Form onSubmit={this.submitHandler} icon={icon} title={global} link="/admin/cms" innerClassName="row" className="shadow-sm">
-                            <Col lg={8}>
-                                <Feedback message={message} />
-                                <Row>
-                                    <input type="hidden" name="_method" defaultValue="PATCH" />
+                        <Col lg={8}>
+                            <Feedback message={message} />
+                            <Row>
+                                <input type="hidden" name="_method" defaultValue="PATCH" />
 
-                                    <FormInput type="text" className="col-md-6" icon="signature" onChange={this.inputChangeHandler} value={app_name} name="app_name" required placeholder={form.app_name} />
-                                    <FormInput type="text" className="col-md-6" icon="signature" onChange={this.inputChangeHandler} value={company_name} name="company_name" required placeholder={form.company_name} />
+                                <FormInput type="text" className="col-md-6" icon="signature" onChange={this.inputChangeHandler} value={app_name} name="app_name" required placeholder={form.app_name} />
+                                <FormInput type="text" className="col-md-6" icon="signature" onChange={this.inputChangeHandler} value={company_name} name="company_name" required placeholder={form.company_name} />
 
-                                    <input type="file" id="logo" name="logo" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
+                                <input type="file" id="logo" name="logo" className="d-none" onChange={this.inputChangeHandler} accept=".png,.jpg,.jpeg" />
 
-                                    <div className="col-12">
-                                        <FormButton color="green" icon={faSave}>{save}</FormButton>
-                                    </div>
-                                </Row>
-                            </Col>
-
-                            <Col lg={4}>
-                                <div className="embed-responsive embed-responsive-1by1 bg-soft border border-light d-flex justify-content-center align-items-center w-60 mx-auto" style={{ cursor: 'pointer', background: logo && `url("${logo}") no-repeat center`, backgroundSize: 'contain' }} onClick={this.fileUpload}>
-                                    {logo && (logo !== cms.global.logo) && <div className="text-center text-green">
-                                        <div><FontAwesomeIcon icon={faCheckCircle} fixedWidth size="5x" /></div>
-                                        <div className="mt-3">{selected_file}</div>
-                                    </div>}
+                                <div className="col-12">
+                                    <FormButton color="green" icon="save">{save}</FormButton>
                                 </div>
-                            </Col>
-                        </Form>
+                            </Row>
+                        </Col>
+
+                        <Col lg={4}>
+                            <div className="embed-responsive embed-responsive-1by1 bg-soft border border-light d-flex justify-content-center align-items-center w-60 mx-auto" style={{ cursor: 'pointer', background: logo && `url("${logo}") no-repeat center`, backgroundSize: 'contain' }} onClick={this.fileUpload}>
+                                {logo && (logo !== cms.global.logo) && <div className="text-center text-green">
+                                    <div><FontAwesomeIcon icon={faCheckCircle} fixedWidth size="5x" /></div>
+                                    <div className="mt-3">{selected_file}</div>
+                                </div>}
+                            </div>
+                        </Col>
                     </Row>
-                </>
+                </Col>
             );
         }
 
@@ -127,7 +124,9 @@ class Global extends Component {
                 <div className="p-4 pb-0">
                     {redirect}
                     {errors}
-                    {content}
+                    <Form onSubmit={this.submitHandler} icon={icon} title={global} link="/admin/cms" innerClassName="row justify-content-center">
+                        {content}
+                    </Form>
                 </div>
             </>
         );

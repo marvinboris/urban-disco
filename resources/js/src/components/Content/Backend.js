@@ -68,14 +68,25 @@ export default {
                 "add": "Add method",
                 "index": "Method list"
             },
-            "enrolments": {
-                "title": "Enrolments"
+            "post_categories": {
+                "title": "Post categories",
+                "add": "Add post category",
+                "index": "Post category list"
             },
-            "payments": {
-                "title": "Payments report"
+            "posts": {
+                "title": "Posts",
+                "add": "Add post",
+                "index": "Post list"
             },
-            "courses": {
-                "title": "Courses"
+            "brands": {
+                "title": "Brands",
+                "add": "Add brand",
+                "index": "Brand list"
+            },
+            "products": {
+                "title": "Products",
+                "add": "Add product",
+                "index": "Product list"
             }
         }
     },
@@ -220,65 +231,60 @@ export default {
                 "created_at": "Created at"
             }
         },
-        "enrolments": {
-            "title": "Enrolments",
-            "subtitle": "Please follow the instructions carefully",
-            "instructions": "Please fill the form below, All fields are required",
-            "create": "Create enrolment",
-            "edit": "Edit enrolment",
-            "index": "Enrolment list",
+        "post_categories": {
+            "title": "Post Categories",
+            "add": "Add post category",
+            "edit": "Edit post category",
+            "index": "Post category list",
             "form": {
-                "ref": "User reference",
-                "course": "Course",
-                "select_course": "Select course",
-                "background": "Educational background",
-                "name": "Full name",
-                "region": "Region",
-                "country": "Country",
-                "phone": "Phone",
-                "email": "E-mail address",
-                "address": "Address",
-                "nid": "Certified NID copy",
-                "diploma": "Certified diploma copy",
-                "photo": "Photo 4x4",
-                "cv": "CV",
+                "name": "Post category's name",
+                "slug": "Slug",
+                "is_active": "Status",
                 "created_at": "Created at"
             }
         },
-        "payments": {
-            "title": "Payments report",
-            "subtitle": "Please follow the instructions carefully",
-            "index": "Payments report",
+        "posts": {
+            "title": "Posts",
+            "add": "Add post",
+            "edit": "Edit post",
+            "index": "Post list",
             "form": {
-                "enrolment": "Enrolment",
-                "method": "Payment method",
-                "amount": "Paid amount",
-                "status": "Status",
-                "comments": "Comments"
+                "title": "Post's Title",
+                "body": "Post's Body",
+                "photo": "Post's Photo",
+                "post_category": "Post Category",
+                "select_status": "Select status",
+                "is_active": "Status",
+                "slug": "Slug",
+                "select_post_category": "Select post category",
+                "created_at": "Created at"
             }
         },
-        "courses": {
-            "title": "Courses",
-            "subtitle": "Please follow the instructions carefully",
-            "instructions": "Please fill the form below, All fields are required",
-            "create": "Create course",
-            "edit": "Edit course",
-            "index": "Course list",
+        "brands": {
+            "title": "Brands",
+            "add": "Add brand",
+            "edit": "Edit brand",
+            "index": "Brand list",
             "form": {
-                "name": "Course name",
-                "description": "Course description",
-                "photo": "Photo",
-                "course_photo": "Course photo",
-                "requirements": "Requirements",
-                "training": "Training duration (in days)",
-                "internship": "Internship duration (in days)",
-                "prizes": "Prizes",
-                "country": "Country",
-                "color": "Color",
-                "select_color": "Select color",
-                "fees": "Registration fees",
-                "level": "Difficulty",
-                "select_level": "Select difficulty level",
+                "name": "Brand's name",
+                "created_at": "Created at"
+            }
+        },
+        "products": {
+            "title": "Products",
+            "add": "Add product",
+            "edit": "Edit product",
+            "index": "Product list",
+            "form": {
+                "name": "Product's Name",
+                "description": "Product's Description",
+                "photo": "Product's Photo",
+                "price": "Product's Price",
+                "brand": "Brand",
+                "select_status": "Select status",
+                "is_active": "Status",
+                "slug": "Slug",
+                "select_brand": "Select brand",
                 "created_at": "Created at"
             }
         }

@@ -21,6 +21,11 @@ class Blog extends Component {
 
     render() {
         const {
+            content: {
+                cms: {
+                    pages: { frontend: { pages: { posts: { banner } } } }
+                }
+            },
             frontend: { posts: { loading, message, error, posts = [] } }
         } = this.props;
         let content;
@@ -47,7 +52,7 @@ class Blog extends Component {
 
         return (
             <Col xs={12} className="Blog p-0">
-                <Banner title="Blog" />
+                <Banner title={banner.title} />
 
                 <PresentationalContainer>
                     <div className="py-5">

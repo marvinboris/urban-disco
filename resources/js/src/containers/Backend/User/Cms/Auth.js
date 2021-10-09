@@ -1,8 +1,7 @@
-import React, { Component, useState } from 'react';
+import React, { Component, Fragment, useState } from 'react';
 import { connect } from 'react-redux';
 import { Redirect, withRouter } from 'react-router-dom';
-import { Col, FormGroup, Input, Label, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap';
-import { faSave } from '@fortawesome/free-regular-svg-icons';
+import { Col, FormGroup, Input, Label, Row } from 'reactstrap';
 
 // Components
 import Breadcrumb from '../../../../components/Backend/UI/Breadcrumb/Breadcrumb';
@@ -21,12 +20,13 @@ import AUTH from '../../../../components/Content/Auth';
 
 const icon = "wrench";
 
-const SubNavLinks = ({ auth, language }) => {
+const Languages = ({ auth, language }) => {
     const [activeTab, setActiveTab] = useState(language.abbr + '-footer');
     const [value, setValue] = useState(auth);
 
-    const toggle = tab => {
-        if (activeTab !== tab) setActiveTab(tab);
+    const inputChangeHandler = e => {
+        const { value } = e.target;
+        if (value !== activeTab) setActiveTab(value);
     }
 
     const onChange = (e, ...deepness) => {
@@ -70,26 +70,22 @@ const SubNavLinks = ({ auth, language }) => {
         const findAppend = paramAppends.find(el => (new RegExp(el.regex.replace(/\[/g, '\\[').replace(/\]/g, '\\]'))).test(mainName));
         append = !findAppend ? null : findAppend.action(mainItem);
 
-        return typeof mainItem === 'string' ? <>
+        return typeof mainItem === 'string' ? <Fragment key={language.abbr + '-' + mainId}>
             {prepend}
             <FormGroup className="col-md-6 col-lg-4 align-self-end">
                 <Label className="text-small text-500">{mainItem}</Label>
-                <Input type="text" name={mainName} id={mainId} placeholder={mainItem} onChange={e => onChange(e, ...mainDeepness)} value={mainValue} />
+                <Input type="textarea" name={mainName} id={mainId} placeholder={mainItem} onChange={e => onChange(e, ...mainDeepness)} value={mainValue} />
             </FormGroup>
             {append}
-        </> : recursiveDeepness(mainItem, mainName, mainValue, mainDeepness, paramPrepends, paramAppends);
+        </Fragment> : recursiveDeepness(mainItem, mainName, mainValue, mainDeepness, paramPrepends, paramAppends);
     });
 
 
 
-    const navItems = Object.keys(auth).map(key => {
+    const options = Object.keys(auth).sort((a, b) => a.localeCompare(b)).map(key => {
         const id = `${language.abbr}-${key}`;
 
-        return <NavItem key={id}>
-            <NavLink className={(activeTab === id) ? 'active' : ""} onClick={() => toggle(id)}>
-                <span className="text-capitalize">{key.split('_').join(' ')}</span>
-            </NavLink>
-        </NavItem>
+        return <option key={id} className="text-capitalize" value={id}>{key.split('_').join(' ')}</option>;
     });
 
     const prefix = `${language.abbr}[auth]`;
@@ -111,27 +107,33 @@ const SubNavLinks = ({ auth, language }) => {
         const currentDeepness = [item];
         const current = recursiveDeepness(currentItem, currentName, currentValue, currentDeepness);
 
-        return <TabPane key={Math.random() + currentName} tabId={`${language.abbr}-${item}`} className="pt-4">
-            <Row>{current}</Row>
-        </TabPane>;
+        const id = language.abbr + "-" + item;
+
+        return <Row key={language.abbr + '-' + currentName} className={`pt-4 ${(activeTab === id) ? "" : "d-none"}`}>{current}</Row>;
     });
 
-    return <>
-        <Nav tabs pills>{navItems}</Nav>
+    return <Row key={'Languages-' + language.abbr}>
+        <div className="col-md-6 col-xl-4 col-xxl-3">
+            <FormGroup>
+                <Input type="select" name="tab" onChange={inputChangeHandler} className="text-capitalize" value={activeTab}>
+                    {options}
+                </Input>
+            </FormGroup>
+        </div>
 
-        <TabContent activeTab={activeTab}>
+        <div className="col-12">
+            <Row className={`pt-4 ${(activeTab === (language.abbr + '-admin')) ? "" : "d-none"}`}>
+                {admin}
+            </Row>
+
             {resourceTabPanes}
-
-            <TabPane tabId={language.abbr + '-admin'} className="pt-4">
-                <Row>{admin}</Row>
-            </TabPane>
-        </TabContent>
-    </>;
+        </div>
+    </Row>;
 };
 
 class Auth extends Component {
     state = {
-        activeTab: process.env.MIX_DEFAULT_LANG
+        abbr: process.env.MIX_DEFAULT_LANG
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
@@ -161,12 +163,6 @@ class Auth extends Component {
         this.setState({ [name]: files ? files[0] : value });
     }
 
-    fileUpload = () => document.getElementById('logo').click()
-
-    toggle = tab => {
-        if (this.state.activeTab !== tab) this.setState({ activeTab: tab });
-    }
-
     render() {
         let {
             content: {
@@ -177,7 +173,7 @@ class Auth extends Component {
             backend: { cms: { loading, error, message, cms, languages } },
             auth: { data: { role: { features } } }
         } = this.props;
-        const { activeTab } = this.state;
+        const { abbr } = this.state;
         let content = null;
         let errors = null;
 
@@ -193,42 +189,32 @@ class Auth extends Component {
             </>;
 
             if (!languages) languages = [];
-            const nav = languages.map(language => <NavItem key={Math.random()}>
-                <NavLink className={(activeTab === language.abbr) ? 'active' : ''} onClick={() => this.toggle(language.abbr)}>
-                    {language.name}
-                </NavLink>
-            </NavItem>);
+            const languagesOptions = languages.map(language => <option key={Math.random() + JSON.stringify(language)} value={language.abbr}>{language.name}</option>);
 
-            const tabContent = languages.map(language => <TabPane key={Math.random()} tabId={language.abbr}>
-                <SubNavLinks auth={cms.pages[language.abbr].auth} language={language} />
-            </TabPane>);
+            const mainContent = languages.map(language => <div key={Math.random()} className={language.abbr === abbr ? "" : "d-none"}>
+                <Languages auth={cms.pages[language.abbr].auth} language={language} />
+            </div>);
 
-            content = (
-                <>
-                    <Row>
-                        <Form onSubmit={this.submitHandler} icon={icon} title={auth} link="/admin/cms" innerClassName="row" className="shadow-sm">
-                            <Col lg={12}>
-                                <Feedback message={message} />
-                                <Row>
-                                    <input type="hidden" name="_method" defaultValue="PATCH" />
+            content = <Col lg={9}>
+                <Feedback message={message} />
+                <Row>
+                    <input type="hidden" name="_method" defaultValue="PATCH" />
 
-                                    <Col lg={2}>
-                                        <Nav tabs vertical pills>{nav}</Nav>
-                                    </Col>
+                    <div className="col-md-6 col-xl-4 col-xxl-3">
+                        <FormGroup>
+                            <Input type="select" name="abbr" onChange={this.inputChangeHandler} value={abbr}>
+                                {languagesOptions}
+                            </Input>
+                        </FormGroup>
+                    </div>
 
-                                    <Col lg={10}>
-                                        <TabContent activeTab={activeTab}>{tabContent}</TabContent>
-                                    </Col>
+                    <div className="col-12">{mainContent}</div>
 
-                                    <div className="col-12">
-                                        <FormButton color="green" icon={faSave}>{save}</FormButton>
-                                    </div>
-                                </Row>
-                            </Col>
-                        </Form>
-                    </Row>
-                </>
-            );
+                    <div className="col-12">
+                        <FormButton color="green" icon="save">{save}</FormButton>
+                    </div>
+                </Row>
+            </Col>;
         }
 
         return (
@@ -241,7 +227,11 @@ class Auth extends Component {
                 <div className="p-4 pb-0">
                     {redirect}
                     {errors}
-                    {content}
+                    <Row>
+                        <Form onSubmit={this.submitHandler} icon={icon} title={auth} link="/admin/cms" innerClassName="row justify-content-center">
+                            {content}
+                        </Form>
+                    </Row>
                 </div>
             </>
         );

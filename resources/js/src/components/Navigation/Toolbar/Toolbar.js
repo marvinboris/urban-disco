@@ -7,7 +7,7 @@ import Logo from '../../UI/Logo/Logo';
 
 import './Toolbar.css';
 
-const toolbar = ({ isAuth, name, drawerToggleClicked, logoutHandler, role, cartItemsNumber, notifications }) => {
+export default ({ }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
@@ -20,11 +20,9 @@ const toolbar = ({ isAuth, name, drawerToggleClicked, logoutHandler, role, cartI
 
                     <NavbarToggler onClick={toggle} />
 
-                    <NavigationItems isAuth={isAuth} isOpen={isOpen} name={name} logoutHandler={logoutHandler} notifications={notifications} cartItemsNumber={cartItemsNumber} role={role} />
+                    <NavigationItems isOpen={isOpen} />
                 </Navbar>
             </Container>
         </div>
     )
 };
-
-export default toolbar;

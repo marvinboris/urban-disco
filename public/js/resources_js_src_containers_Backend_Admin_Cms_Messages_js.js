@@ -559,23 +559,29 @@ __webpack_require__.r(__webpack_exports__);
     "updated": "Method successfully updated.",
     "deleted": "Method successfully deleted."
   },
-  "enrolments": {
-    "not_found": "Enrolment not found.",
-    "created": "Enrolment successfully created.",
-    "updated": "Enrolment successfully updated.",
-    "deleted": "Enrolment successfully deleted."
+  "post_categories": {
+    "not_found": "Post category not found.",
+    "created": "Post category succesfully created.",
+    "updated": "Post category successfully updated.",
+    "deleted": "Post category successfully deleted."
   },
-  "payments": {
-    "not_found": "Payment not found.",
-    "created": "Payment successfully created.",
-    "updated": "Payment successfully updated.",
-    "deleted": "Payment successfully deleted."
+  "posts": {
+    "not_found": "Post not found.",
+    "created": "Post succesfully created.",
+    "updated": "Post successfully updated.",
+    "deleted": "Post successfully deleted."
   },
-  "courses": {
-    "not_found": "Course not found.",
-    "created": "Course successfully created.",
-    "updated": "Course successfully updated.",
-    "deleted": "Course successfully deleted."
+  "brands": {
+    "not_found": "Brand not found.",
+    "created": "Brand succesfully created.",
+    "updated": "Brand successfully updated.",
+    "deleted": "Brand successfully deleted."
+  },
+  "products": {
+    "not_found": "Product not found.",
+    "created": "Product succesfully created.",
+    "updated": "Product successfully updated.",
+    "deleted": "Product successfully deleted."
   }
 });
 
@@ -23832,7 +23838,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react_popper__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-popper */ "./node_modules/react-popper/lib/esm/Popper.js");
+/* harmony import */ var react_popper__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-popper */ "./node_modules/reactstrap/node_modules/react-popper/lib/esm/Popper.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils */ "./node_modules/reactstrap/es/utils.js");
 /* harmony import */ var _Fade__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Fade */ "./node_modules/reactstrap/es/Fade.js");
 
