@@ -7,6 +7,8 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 import Logo from '../../UI/Logo/Logo';
 import Languages from './Languages';
 
+import { setLanguage } from '../../../store/actions/content';
+
 import './Toolbar.css';
 
 class Toolbar extends Component {
