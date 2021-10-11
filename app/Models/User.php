@@ -75,6 +75,11 @@ class User extends Authenticatable
 
     public function language()
     {
+        if (!Language::find($this->language_id)) {
+            $this->language_id = Language::first()->id;
+            $this->save();
+        }
+
         return $this->belongsTo(Language::class);
     }
 
