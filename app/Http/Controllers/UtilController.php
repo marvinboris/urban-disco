@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Models\Admin;
+use App\Models\Language;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -111,6 +112,26 @@ class UtilController extends Controller
     {
         json_decode($string);
         return json_last_error() === JSON_ERROR_NONE;
+    }
+
+    public static function translatable($value)
+    {
+        $data = null;
+        if (!self::isJson($value)) {
+            $data = [];
+            foreach (Language::all() as $language) {
+                $data[$language->abbr] = $value;
+            }
+            return $data;
+        }
+
+        $value = json_decode($value, true);
+
+        foreach (Language::all() as $language) {
+            if (!array_key_exists($language->abbr, $value)) $value[$language->abbr] = $value[env('MIX_DEFAULT_LANG')];
+        }
+
+        return $value;
     }
 
 

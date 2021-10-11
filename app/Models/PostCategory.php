@@ -33,23 +33,9 @@ class PostCategory extends Model
         'link', 'stringified',
     ];
 
-    public function translatable($value)
-    {
-        $data = null;
-        if (!UtilController::isJson($value)) {
-            $data = [];
-            foreach (Language::all() as $language) {
-                $data[$language->abbr] = $value;
-            }
-            return $data;
-        }
-
-        return json_decode($value, true);
-    }
-
     public function getNameAttribute($value)
     {
-        return $this->translatable($value);
+        return UtilController::translatable($value);
     }
 
     public function getStringifiedAttribute()

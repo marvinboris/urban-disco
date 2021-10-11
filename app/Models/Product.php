@@ -21,20 +21,6 @@ class Product extends Model
         'stringified', 'link',
     ];
 
-    public function translatable($value)
-    {
-        $data = null;
-        if (!UtilController::isJson($value)) {
-            $data = [];
-            foreach (Language::all() as $language) {
-                $data[$language->abbr] = $value;
-            }
-            return $data;
-        }
-
-        return json_decode($value, true);
-    }
-
     public function sluggable()
     {
         return [
@@ -46,12 +32,12 @@ class Product extends Model
 
     public function getNameAttribute($value)
     {
-        return $this->translatable($value);
+        return UtilController::translatable($value);
     }
 
     public function getDescriptionAttribute($value)
     {
-        return $this->translatable($value);
+        return UtilController::translatable($value);
     }
 
     public function getPhotoAttribute($value)

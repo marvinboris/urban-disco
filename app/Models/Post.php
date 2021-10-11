@@ -35,28 +35,14 @@ class Post extends Model
         'link', 'stringified',
     ];
 
-    public function translatable($value)
-    {
-        $data = null;
-        if (!UtilController::isJson($value)) {
-            $data = [];
-            foreach (Language::all() as $language) {
-                $data[$language->abbr] = $value;
-            }
-            return $data;
-        }
-
-        return json_decode($value, true);
-    }
-
     public function getTitleAttribute($value)
     {
-        return $this->translatable($value);
+        return UtilController::translatable($value);
     }
 
     public function getBodyAttribute($value)
     {
-        return $this->translatable($value);
+        return UtilController::translatable($value);
     }
 
     public function getStringifiedAttribute()
