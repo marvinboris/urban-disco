@@ -93,7 +93,7 @@ class LanguageController extends Controller
 
         $input = $request->all();
 
-        $cms['pages'][$request->abbr] = $cms['pages']['en'];
+        $cms['pages'][$request->abbr] = $cms['pages'][env('MIX_DEFAULT_LANG')];
 
         $contentText = json_encode($cms);
         file_put_contents(base_path('cms.json'), $contentText);
