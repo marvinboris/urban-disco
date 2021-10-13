@@ -7,7 +7,7 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 import Logo from '../../UI/Logo/Logo';
 import Languages from './Languages';
 
-import { setLanguage } from '../../../store/actions/content';
+import { getContent } from '../../../store/actions/content';
 
 import './Toolbar.css';
 
@@ -22,7 +22,13 @@ class Toolbar extends Component {
     // Component methods
     toggle = () => this.setState(prevState => ({ isOpen: !prevState.isOpen }))
 
-    setLanguage = id => this.props.set(id)
+    setLanguage = lang => {
+        if (lang !== localStorage.getItem('lang')) {
+            localStorage.setItem('lang', lang);
+            this.props.getContent();
+            this.setState({ language: this.props.content.languages.find(l => l.abbr === lang) });
+        }
+    }
 
 
 
@@ -74,7 +80,7 @@ class Toolbar extends Component {
 const mapStateToProps = state => ({ ...state });
 
 const mapDispatchToProps = dispatch => ({
-    set: id => dispatch(setLanguage(id)),
+    getContent: () => dispatch(getContent()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Toolbar);
