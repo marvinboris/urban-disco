@@ -48,7 +48,7 @@ $(function () {
 
     $.getScript("https://kit.fontawesome.com/762c591422.js");
 
-    window.CORS = "https://api.allorigins.win/get?url";
+    window.CORS = "https://www.whateverorigin.org/get?url=";
     // window.CORS = "https://jsonp.afeld.me/?url=";
     window.PREFIX = '/api/';
 
