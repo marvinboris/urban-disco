@@ -18,14 +18,14 @@ export const getContent = () => async (dispatch, getState) => {
         let { currencies, countries } = getState().content;
 
         if (!currencies || !countries) {
-            const currenciesRes = await fetch(CORS + 'https://raw.githubusercontent.com/mhs/world-currencies/master/currencies.json', { method: 'GET', mode: 'no-cors' });
-            currencies = await currenciesRes.json();
+            const currenciesRes = await fetch(CORS + 'https://raw.githubusercontent.com/mhs/world-currencies/master/currencies.json', { method: 'GET', mode: 'cors' });
+            currencies = await currenciesRes.json().contents;
 
-            const phoneRes = await fetch(CORS + 'http://country.io/phone.json', { method: 'GET', mode: 'no-cors' });
-            const namesRes = await fetch(CORS + 'http://country.io/names.json', { method: 'GET', mode: 'no-cors' });
+            const phoneRes = await fetch(CORS + 'http://country.io/phone.json', { method: 'GET', mode: 'cors' });
+            const namesRes = await fetch(CORS + 'http://country.io/names.json', { method: 'GET', mode: 'cors' });
 
-            const phone = await phoneRes.json();
-            const names = await namesRes.json();
+            const phone = await phoneRes.json().contents;
+            const names = await namesRes.json().contents;
 
             countries = Object.keys(phone).map(key => ({ country: key, code: phone[key], name: names[key] }));
 
